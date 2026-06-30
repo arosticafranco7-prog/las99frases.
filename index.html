@@ -3,472 +3,515 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LAS 99 FRASES</title>
 
-    <title>LAS 99 FRASES</title>
+<link rel="stylesheet" href="style.css">
 
-    <meta name="description" content="LAS 99 FRASES - Tienda de ropa urbana e importada">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<!-- =========================
-HEADER
-========================= -->
+<!-- ========================= -->
+<!-- BARRA SUPERIOR -->
+<!-- ========================= -->
+
+<div class="top-bar">
+
+<div class="top-item">
+<i class="fa-solid fa-truck"></i>
+<span>Envíos a todo el país</span>
+</div>
+
+<div class="top-item">
+<i class="fa-regular fa-credit-card"></i>
+<span>3 Cuotas sin interés</span>
+</div>
+
+<div class="top-item">
+<i class="fa-solid fa-rotate-left"></i>
+<span>Cambios y devoluciones</span>
+</div>
+
+<div class="top-item">
+<i class="fa-solid fa-lock"></i>
+<span>Compra 100% segura</span>
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
 
 <header class="header">
 
-    <div class="logo">
-        LAS <span>99</span> FRASES
-    </div>
+<div class="header-top">
 
-    <nav class="menu">
+<div class="menu-icon">
+<i class="fa-solid fa-bars"></i>
+</div>
 
-        <a href="#inicio">Inicio</a>
+<div class="logo">
 
-        <a href="#categorias">Categorías</a>
+<h1>
 
-        <a href="#productos">Productos</a>
+LAS <span>99</span><br>
 
-        <a href="#importados">Importados</a>
+FRASES
 
-        <a href="#ofertas">Ofertas</a>
+</h1>
 
-        <a href="#contacto">Contacto</a>
+<p>CLOTHING BRAND</p>
 
-    </nav>
+</div>
 
-    <div class="acciones">
+<div class="header-icons">
 
-        <button class="icono" title="Buscar">🔍</button>
+<div class="icono">
+<i class="fa-solid fa-magnifying-glass"></i>
+</div>
 
-        <button class="icono" title="Favoritos">❤</button>
+<div class="icono">
+<i class="fa-regular fa-user"></i>
+</div>
 
-        <button class="icono" title="Mi cuenta">👤</button>
+<div class="icono">
+<i class="fa-regular fa-heart"></i>
+</div>
 
-        <button class="carrito">
-            🛒
-            <span>0</span>
-        </button>
-<button onclick="vaciarCarrito()" class="icono">
-🗑
-</button>
-    </div>
+<div class="icono carrito">
 
-</header>
+<i class="fa-solid fa-cart-shopping"></i>
 
-<!-- =========================
-HERO
-========================= -->
+<span id="contador-carrito">0</span>
 
-<section class="hero" id="inicio">
+</div>
 
-    <div class="hero-texto">
+</div>
 
-        <h1>
-            VESTITE<br>
-            DIFERENTE
-        </h1>
+</div>
 
-        <p>
+<!-- ========================= -->
+<!-- MENU -->
+<!-- ========================= -->
 
-            Moda urbana • Calidad Premium • Artículos Importados
+<nav class="menu">
 
-        </p>
+<a href="#">INICIO</a>
 
-        <div class="botones">
+<a href="#">HOMBRE</a>
 
-            <a href="#productos" class="btn-principal">
-                Comprar Ahora
-            </a>
+<a href="#">MUJER</a>
 
-            <a href="#importados" class="btn-secundario">
-                Ver Importados
-            </a>
+<a href="#">IMPORTADOS</a>
 
-        </div>
+<a href="#">NUEVOS INGRESOS</a>
 
-    </div>
+<a href="#">OFERTAS</a>
+
+<a href="#">CONTACTO</a>
+
+</nav>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="hero">
+
+<div class="hero-overlay">
+
+<p>Colección 2026</p>
+
+<h2>
+
+VESTITE DIFERENTE
+
+</h2>
+
+<h3>
+
+EXPRESÁ QUIÉN SOS
+
+</h3>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn-principal">
+
+Comprar Ahora
+
+</a>
+
+<a href="#" class="btn-secundario">
+
+Ver Importados
+
+</a>
+
+</div>
+
+</div>
+
+</section><!-- ========================= -->
+<!-- CATEGORÍAS -->
+<!-- ========================= -->
+
+<section class="categorias">
+
+<div class="contenedor">
+
+<h2 class="titulo-seccion">Categorías</h2>
+
+<div class="grid-categorias">
+
+<div class="categoria-card">
+<img src="assets/img/categorias/remeras.jpg" alt="">
+<div class="overlay">
+<h3>Remeras</h3>
+<a href="#">Ver Todo</a>
+</div>
+</div>
+
+<div class="categoria-card">
+<img src="assets/img/categorias/buzos.jpg" alt="">
+<div class="overlay">
+<h3>Buzos</h3>
+<a href="#">Ver Todo</a>
+</div>
+</div>
+
+<div class="categoria-card">
+<img src="assets/img/categorias/camperas.jpg" alt="">
+<div class="overlay">
+<h3>Camperas</h3>
+<a href="#">Ver Todo</a>
+</div>
+</div>
+
+<div class="categoria-card">
+<img src="assets/img/categorias/pantalones.jpg" alt="">
+<div class="overlay">
+<h3>Pantalones</h3>
+<a href="#">Ver Todo</a>
+</div>
+</div>
+
+<div class="categoria-card">
+<img src="assets/img/categorias/gorras.jpg" alt="">
+<div class="overlay">
+<h3>Gorras</h3>
+<a href="#">Ver Todo</a>
+</div>
+</div>
+
+<div class="categoria-card">
+<img src="assets/img/categorias/accesorios.jpg" alt="">
+<div class="overlay">
+<h3>Accesorios</h3>
+<a href="#">Ver Todo</a>
+</div>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<!-- =========================
-CATEGORÍAS
-========================= -->
+<!-- ========================= -->
+<!-- IMPORTADOS -->
+<!-- ========================= -->
 
-<section class="categorias" id="categorias">
+<section class="importados">
 
-    <h2>
+<div class="contenedor">
 
-        NUESTRAS CATEGORÍAS
+<div class="titulo-flex">
 
-    </h2>
+<h2>Importados</h2>
 
-    <div class="grid">
+<a href="#">Ver Todo</a>
 
-        <div class="card">
+</div>
 
-            👕
+<div class="productos-grid">
 
-            <br><br>
+<div class="producto">
+<img src="assets/img/productos/importado1.jpg" alt="">
+<h3>Nike Air Max</h3>
+<p>$189.999</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            Remeras
+<div class="producto">
+<img src="assets/img/productos/importado2.jpg" alt="">
+<h3>Jordan Retro</h3>
+<p>$319.999</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-        </div>
+<div class="producto">
+<img src="assets/img/productos/importado3.jpg" alt="">
+<h3>Adidas Campus</h3>
+<p>$159.999</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-        <div class="card">
+<div class="producto">
+<img src="assets/img/productos/importado4.jpg" alt="">
+<h3>New Balance</h3>
+<p>$149.999</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            🧥
+</div>
 
-            <br><br>
-
-            Buzos
-
-        </div>
-
-        <div class="card">
-
-            👖
-
-            <br><br>
-
-            Pantalones
-
-        </div>
-
-        <div class="card">
-
-            🧢
-
-            <br><br>
-
-            Gorras
-
-        </div>
-
-        <div class="card">
-
-            👟
-
-            <br><br>
-
-            Zapatillas
-
-        </div>
-
-        <div class="card">
-
-            🎒
-
-            <br><br>
-
-            Accesorios
-
-        </div>
-
-    </div>
-
-</section> 
-<!-- ======================================
-PRODUCTOS DESTACADOS
-====================================== -->
-
-<section class="productos" id="productos">
-
-    <h2>PRODUCTOS DESTACADOS</h2>
-
-    <div class="grid-productos">
-
-        <article class="card-producto">
-
-            <span class="nuevo">NUEVO</span>
-
-            <img src="assets/img/productos/producto1.jpg" alt="Producto">
-
-            <div class="info-producto">
-
-                <h3>Remera Premium</h3>
-
-                <div class="precio">$00.000</div>
-
-                <a href="#" class="btn-comprar">Comprar</a>
-
-            </div>
-
-        </article>
-
-        <article class="card-producto">
-
-            <img src="assets/img/productos/producto2.jpg" alt="Producto">
-
-            <div class="info-producto">
-
-                <h3>Buzo Oversize</h3>
-
-                <div class="precio">$00.000</div>
-
-                <a href="#" class="btn-comprar">Comprar</a>
-
-            </div>
-
-        </article>
-
-        <article class="card-producto">
-
-            <img src="assets/img/productos/producto3.jpg" alt="Producto">
-
-            <div class="info-producto">
-
-                <h3>Campera Urban</h3>
-
-                <div class="precio">$00.000</div>
-
-                <a href="#" class="btn-comprar">Comprar</a>
-
-            </div>
-
-        </article>
-
-        <article class="card-producto">
-
-            <span class="nuevo">TOP</span>
-
-            <img src="assets/img/productos/producto4.jpg" alt="Producto">
-
-            <div class="info-producto">
-
-                <h3>Jogger Premium</h3>
-
-                <div class="precio">$00.000</div>
-
-                <a href="#" class="btn-comprar">Comprar</a>
-
-            </div>
-
-        </article>
-
-    </div>
+</div>
 
 </section>
 
-<!-- ======================================
-IMPORTADOS
-====================================== -->
-
-<section class="importados" id="importados">
-
-    <div class="banner-importados">
-
-        <img src="assets/img/importados.jpg" alt="Importados">
-
-        <div class="texto-importados">
-
-            <h2>ARTÍCULOS IMPORTADOS</h2>
-
-            <p>
-                Calidad Premium • Ediciones Exclusivas
-            </p>
-
-            <a href="#" class="btn-principal">
-                Ver Catálogo
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ======================================
-MÁS VENDIDOS
-====================================== -->
+<!-- ========================= -->
+<!-- NUEVOS INGRESOS -->
+<!-- ========================= -->
 
 <section class="productos">
 
-    <h2>MÁS VENDIDOS</h2>
+<div class="contenedor">
 
-    <div class="grid-productos">
+<div class="titulo-flex">
 
-        <article class="card-producto">
+<h2>Nuevos Ingresos</h2>
 
-            <img src="assets/img/productos/producto5.jpg" alt="Producto">
+<a href="#">Ver Todo</a>
 
-            <div class="info-producto">
+</div>
 
-                <h3>Remera Black Edition</h3>
+<div class="productos-grid">
 
-                <div class="precio">$00.000</div>
+<div class="producto">
+<img src="assets/img/productos/remera1.jpg" alt="">
+<h3>Remera Mindset</h3>
+<p>$29.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-                <a href="#" class="btn-comprar">Comprar</a>
+<div class="producto">
+<img src="assets/img/productos/buzo1.jpg" alt="">
+<h3>Buzo Oversize</h3>
+<p>$54.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            </div>
+<div class="producto">
+<img src="assets/img/productos/buzo2.jpg" alt="">
+<h3>Buzo No Limits</h3>
+<p>$54.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-        </article>
+<div class="producto">
+<img src="assets/img/productos/campera1.jpg" alt="">
+<h3>Campera Puffer</h3>
+<p>$89.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-        <article class="card-producto">
+<div class="producto">
+<img src="assets/img/productos/pantalon1.jpg" alt="">
+<h3>Jogger Essential</h3>
+<p>$44.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            <img src="assets/img/productos/producto6.jpg" alt="Producto">
+<div class="producto">
+<img src="assets/img/productos/remera2.jpg" alt="">
+<h3>Remera Backprint</h3>
+<p>$29.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            <div class="info-producto">
+</div>
 
-                <h3>Buzo Street</h3>
+</div>
 
-                <div class="precio">$00.000</div>
+</section><!-- ========================= -->
+<!-- MÁS VENDIDOS -->
+<!-- ========================= -->
 
-                <a href="#" class="btn-comprar">Comprar</a>
+<section class="productos">
 
-            </div>
+<div class="contenedor">
 
-        </article>
+<div class="titulo-flex">
 
-        <article class="card-producto">
+<h2>Más Vendidos</h2>
 
-            <img src="assets/img/productos/producto7.jpg" alt="Producto">
+<a href="#">Ver Todo</a>
 
-            <div class="info-producto">
+</div>
 
-                <h3>Campera Premium</h3>
+<div class="productos-grid">
 
-                <div class="precio">$00.000</div>
+<div class="producto">
+<img src="assets/img/productos/mas1.jpg" alt="">
+<h3>Buzo Classic 99</h3>
+<p>$49.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-                <a href="#" class="btn-comprar">Comprar</a>
+<div class="producto">
+<img src="assets/img/productos/mas2.jpg" alt="">
+<h3>Remera Essential</h3>
+<p>$24.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            </div>
+<div class="producto">
+<img src="assets/img/productos/mas3.jpg" alt="">
+<h3>Campera Rompeviento</h3>
+<p>$59.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-        </article>
+<div class="producto">
+<img src="assets/img/productos/mas4.jpg" alt="">
+<h3>Jogger Cargo</h3>
+<p>$49.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-        <article class="card-producto">
+<div class="producto">
+<img src="assets/img/productos/mas5.jpg" alt="">
+<h3>Gorra 99 Original</h3>
+<p>$19.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            <img src="assets/img/productos/producto8.jpg" alt="Producto">
+<div class="producto">
+<img src="assets/img/productos/mas6.jpg" alt="">
+<h3>Hoodie Statement</h3>
+<p>$54.990</p>
+<button class="agregar-carrito">Agregar</button>
+</div>
 
-            <div class="info-producto">
+</div>
 
-                <h3>Jogger Cargo</h3>
-
-                <div class="precio">$00.000</div>
-
-                <a href="#" class="btn-comprar">Comprar</a>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section> 
-<!-- ======================================
-CARRUSEL DESTACADO
-====================================== -->
-
-<section class="carrusel" id="ofertas">
-
-    <h2>DESTACADOS DE LA SEMANA</h2>
-
-    <div class="slider">
-
-        <div class="slide">
-            <img src="assets/img/productos/producto9.jpg" alt="Producto">
-            <h3>Edición Limitada</h3>
-        </div>
-
-        <div class="slide">
-            <img src="assets/img/productos/producto10.jpg" alt="Producto">
-            <h3>Street Collection</h3>
-        </div>
-
-        <div class="slide">
-            <img src="assets/img/productos/producto11.jpg" alt="Producto">
-            <h3>Premium Black</h3>
-        </div>
-
-        <div class="slide">
-            <img src="assets/img/productos/producto12.jpg" alt="Producto">
-            <h3>Urban Style</h3>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<!-- ======================================
-FOOTER
-====================================== -->
+<!-- ========================= -->
+<!-- INSTAGRAM -->
+<!-- ========================= -->
 
-<footer id="contacto">
+<section class="instagram">
 
-    <div class="footer">
+<div class="contenedor">
 
-        <div>
+<h2>Seguinos en Instagram</h2>
 
-            <h3>LAS 99 FRASES</h3>
+<div class="instagram-grid">
 
-            <p>
-                Moda urbana premium con artículos nacionales e importados.
-            </p>
+<img src="assets/img/instagram/1.jpg" alt="">
+<img src="assets/img/instagram/2.jpg" alt="">
+<img src="assets/img/instagram/3.jpg" alt="">
+<img src="assets/img/instagram/4.jpg" alt="">
+<img src="assets/img/instagram/5.jpg" alt="">
+<img src="assets/img/instagram/6.jpg" alt="">
+<img src="assets/img/instagram/7.jpg" alt="">
+<img src="assets/img/instagram/8.jpg" alt="">
 
-        </div>
+</div>
 
-        <div>
+</div>
 
-            <h3>TIENDA</h3>
+</section>
 
-            <a href="#productos">Productos</a>
-            <a href="#importados">Importados</a>
-            <a href="#ofertas">Ofertas</a>
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
 
-        </div>
+<footer class="footer">
 
-        <div>
+<div class="contenedor footer-grid">
 
-            <h3>AYUDA</h3>
+<div>
 
-            <a href="#">Preguntas Frecuentes</a>
-            <a href="#">Cambios y Devoluciones</a>
-            <a href="#">Envíos</a>
+<h3>LAS 99 FRASES</h3>
 
-        </div>
+<p>Más que una marca, una forma de pensar.</p>
 
-        <div>
+</div>
 
-            <h3>CONTACTO</h3>
+<div>
 
-            <a href="#">Instagram</a>
-            <a href="#">WhatsApp</a>
-            <a href="#">Email</a>
+<h4>Información</h4>
 
-        </div>
+<ul>
 
-    </div>
+<li><a href="#">Sobre Nosotros</a></li>
 
-    <div class="footer-bottom">
+<li><a href="#">Preguntas Frecuentes</a></li>
 
-        © 2026 LAS 99 FRASES · Todos los derechos reservados.
+<li><a href="#">Envíos</a></li>
 
-    </div>
+<li><a href="#">Cambios</a></li>
+
+<li><a href="#">Contacto</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Mi Cuenta</h4>
+
+<ul>
+
+<li><a href="#">Ingresar</a></li>
+
+<li><a href="#">Mis Pedidos</a></li>
+
+<li><a href="#">Favoritos</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Contacto</h4>
+
+<p>WhatsApp</p>
+
+<p>Instagram</p>
+
+<p>Facebook</p>
+
+</div>
+
+</div>
 
 </footer>
 
-<!-- ======================================
-BOTÓN WHATSAPP
-====================================== -->
+<!-- BOTÓN WHATSAPP -->
 
-<a href="https://wa.me/5490000000000"
-   class="whatsapp"
-   target="_blank"
-   title="WhatsApp">
+<a href="https://wa.me/5490000000000" class="whatsapp" target="_blank">
 
-    💬
+<i class="fa-brands fa-whatsapp"></i>
 
 </a>
 
