@@ -2,14 +2,30 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LAS 99 FRASES</title>
 
+    <meta name="description" content="LAS 99 FRASES - Tienda de ropa urbana e importada">
+
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
+
+<!-- =========================
+HEADER
+========================= -->
 
 <header class="header">
 
@@ -18,22 +34,28 @@
     </div>
 
     <nav class="menu">
-        <a href="#">Inicio</a>
-        <a href="#">Hombre</a>
-        <a href="#">Mujer</a>
-        <a href="#">Importados</a>
-        <a href="#">Nuevos</a>
-        <a href="#">Ofertas</a>
-        <a href="#">Contacto</a>
+
+        <a href="#inicio">Inicio</a>
+
+        <a href="#categorias">Categorías</a>
+
+        <a href="#productos">Productos</a>
+
+        <a href="#importados">Importados</a>
+
+        <a href="#ofertas">Ofertas</a>
+
+        <a href="#contacto">Contacto</a>
+
     </nav>
 
     <div class="acciones">
 
-        <button class="icono">🔍</button>
+        <button class="icono" title="Buscar">🔍</button>
 
-        <button class="icono">❤</button>
+        <button class="icono" title="Favoritos">❤</button>
 
-        <button class="icono">👤</button>
+        <button class="icono" title="Mi cuenta">👤</button>
 
         <button class="carrito">
             🛒
@@ -44,22 +66,33 @@
 
 </header>
 
-<section class="hero">
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero" id="inicio">
 
     <div class="hero-texto">
 
-        <h1>VESTITE DIFERENTE</h1>
+        <h1>
+            VESTITE<br>
+            DIFERENTE
+        </h1>
 
-        <p>Colección Exclusiva 2026</p>
+        <p>
+
+            Moda urbana • Calidad Premium • Artículos Importados
+
+        </p>
 
         <div class="botones">
 
-            <a href="#" class="btn-principal">
+            <a href="#productos" class="btn-principal">
                 Comprar Ahora
             </a>
 
-            <a href="#" class="btn-secundario">
-                Importados
+            <a href="#importados" class="btn-secundario">
+                Ver Importados
             </a>
 
         </div>
@@ -68,27 +101,374 @@
 
 </section>
 
-<section class="categorias">
+<!-- =========================
+CATEGORÍAS
+========================= -->
 
-    <h2>Categorías</h2>
+<section class="categorias" id="categorias">
+
+    <h2>
+
+        NUESTRAS CATEGORÍAS
+
+    </h2>
 
     <div class="grid">
 
-        <div class="card">Remeras</div>
+        <div class="card">
 
-        <div class="card">Buzos</div>
+            👕
 
-        <div class="card">Camperas</div>
+            <br><br>
 
-        <div class="card">Pantalones</div>
+            Remeras
 
-        <div class="card">Gorras</div>
+        </div>
 
-        <div class="card">Accesorios</div>
+        <div class="card">
+
+            🧥
+
+            <br><br>
+
+            Buzos
+
+        </div>
+
+        <div class="card">
+
+            👖
+
+            <br><br>
+
+            Pantalones
+
+        </div>
+
+        <div class="card">
+
+            🧢
+
+            <br><br>
+
+            Gorras
+
+        </div>
+
+        <div class="card">
+
+            👟
+
+            <br><br>
+
+            Zapatillas
+
+        </div>
+
+        <div class="card">
+
+            🎒
+
+            <br><br>
+
+            Accesorios
+
+        </div>
+
+    </div>
+
+</section> 
+<!-- ======================================
+PRODUCTOS DESTACADOS
+====================================== -->
+
+<section class="productos" id="productos">
+
+    <h2>PRODUCTOS DESTACADOS</h2>
+
+    <div class="grid-productos">
+
+        <article class="card-producto">
+
+            <span class="nuevo">NUEVO</span>
+
+            <img src="assets/img/productos/producto1.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Remera Premium</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+        <article class="card-producto">
+
+            <img src="assets/img/productos/producto2.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Buzo Oversize</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+        <article class="card-producto">
+
+            <img src="assets/img/productos/producto3.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Campera Urban</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+        <article class="card-producto">
+
+            <span class="nuevo">TOP</span>
+
+            <img src="assets/img/productos/producto4.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Jogger Premium</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
 
     </div>
 
 </section>
+
+<!-- ======================================
+IMPORTADOS
+====================================== -->
+
+<section class="importados" id="importados">
+
+    <div class="banner-importados">
+
+        <img src="assets/img/importados.jpg" alt="Importados">
+
+        <div class="texto-importados">
+
+            <h2>ARTÍCULOS IMPORTADOS</h2>
+
+            <p>
+                Calidad Premium • Ediciones Exclusivas
+            </p>
+
+            <a href="#" class="btn-principal">
+                Ver Catálogo
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+MÁS VENDIDOS
+====================================== -->
+
+<section class="productos">
+
+    <h2>MÁS VENDIDOS</h2>
+
+    <div class="grid-productos">
+
+        <article class="card-producto">
+
+            <img src="assets/img/productos/producto5.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Remera Black Edition</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+        <article class="card-producto">
+
+            <img src="assets/img/productos/producto6.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Buzo Street</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+        <article class="card-producto">
+
+            <img src="assets/img/productos/producto7.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Campera Premium</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+        <article class="card-producto">
+
+            <img src="assets/img/productos/producto8.jpg" alt="Producto">
+
+            <div class="info-producto">
+
+                <h3>Jogger Cargo</h3>
+
+                <div class="precio">$00.000</div>
+
+                <a href="#" class="btn-comprar">Comprar</a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section> 
+<!-- ======================================
+CARRUSEL DESTACADO
+====================================== -->
+
+<section class="carrusel" id="ofertas">
+
+    <h2>DESTACADOS DE LA SEMANA</h2>
+
+    <div class="slider">
+
+        <div class="slide">
+            <img src="assets/img/productos/producto9.jpg" alt="Producto">
+            <h3>Edición Limitada</h3>
+        </div>
+
+        <div class="slide">
+            <img src="assets/img/productos/producto10.jpg" alt="Producto">
+            <h3>Street Collection</h3>
+        </div>
+
+        <div class="slide">
+            <img src="assets/img/productos/producto11.jpg" alt="Producto">
+            <h3>Premium Black</h3>
+        </div>
+
+        <div class="slide">
+            <img src="assets/img/productos/producto12.jpg" alt="Producto">
+            <h3>Urban Style</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+FOOTER
+====================================== -->
+
+<footer id="contacto">
+
+    <div class="footer">
+
+        <div>
+
+            <h3>LAS 99 FRASES</h3>
+
+            <p>
+                Moda urbana premium con artículos nacionales e importados.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>TIENDA</h3>
+
+            <a href="#productos">Productos</a>
+            <a href="#importados">Importados</a>
+            <a href="#ofertas">Ofertas</a>
+
+        </div>
+
+        <div>
+
+            <h3>AYUDA</h3>
+
+            <a href="#">Preguntas Frecuentes</a>
+            <a href="#">Cambios y Devoluciones</a>
+            <a href="#">Envíos</a>
+
+        </div>
+
+        <div>
+
+            <h3>CONTACTO</h3>
+
+            <a href="#">Instagram</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Email</a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 LAS 99 FRASES · Todos los derechos reservados.
+
+    </div>
+
+</footer>
+
+<!-- ======================================
+BOTÓN WHATSAPP
+====================================== -->
+
+<a href="https://wa.me/5490000000000"
+   class="whatsapp"
+   target="_blank"
+   title="WhatsApp">
+
+    💬
+
+</a>
 
 <script src="script.js"></script>
 
