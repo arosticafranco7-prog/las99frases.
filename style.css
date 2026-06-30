@@ -560,3 +560,279 @@ text-align:center;
 }
 
 }
+/*======================================
+CATEGORÍAS
+======================================*/
+
+.categorias{
+    width:1200px;
+    margin:100px auto;
+}
+
+.categorias h2{
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.grid-categorias{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.categoria{
+    height:280px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+    transition:.4s;
+}
+
+.categoria img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.categoria:hover img{
+    transform:scale(1.12);
+}
+
+.categoria::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top,rgba(0,0,0,.75),transparent);
+}
+
+.categoria h3{
+    position:absolute;
+    left:30px;
+    bottom:25px;
+    color:white;
+    font-size:30px;
+    z-index:2;
+}
+
+
+/*======================================
+PRODUCTOS
+======================================*/
+
+.productos{
+    width:1200px;
+    margin:100px auto;
+}
+
+.productos h2{
+    font-size:42px;
+    margin-bottom:40px;
+}
+
+.grid-productos{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.card-producto{
+
+    background:white;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.10);
+
+    transition:.35s;
+
+}
+
+.card-producto:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+
+}
+
+.card-producto img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.info-producto{
+
+    padding:20px;
+
+}
+
+.info-producto h3{
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+.precio{
+
+    font-size:28px;
+
+    color:#d4a017;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+.btn-comprar{
+
+    display:block;
+
+    width:100%;
+
+    background:black;
+
+    color:white;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-comprar:hover{
+
+    background:#d4a017;
+
+}
+
+
+/*======================================
+ETIQUETA NUEVO
+======================================*/
+
+.nuevo{
+
+    position:absolute;
+
+    top:15px;
+
+    left:15px;
+
+    background:#d4a017;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:50px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+}
+
+
+/*======================================
+IMPORTADOS
+======================================*/
+
+.importados{
+
+    width:1200px;
+
+    margin:120px auto;
+
+}
+
+.importados h2{
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+.banner-importados{
+
+    height:450px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.banner-importados img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.banner-importados::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+}
+
+.texto-importados{
+
+    position:absolute;
+
+    z-index:2;
+
+    left:70px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+}
+
+.texto-importados h2{
+
+    font-size:56px;
+
+    margin-bottom:20px;
+
+}
+
+.texto-importados p{
+
+    font-size:24px;
+
+    margin-bottom:30px;
+
+}
