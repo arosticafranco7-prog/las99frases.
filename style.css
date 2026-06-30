@@ -836,3 +836,426 @@ IMPORTADOS
     margin-bottom:30px;
 
 }
+/*======================================
+CARRUSEL
+======================================*/
+
+.carrusel{
+
+    width:1200px;
+
+    margin:120px auto;
+
+    overflow:hidden;
+
+}
+
+.carrusel h2{
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+.slider{
+
+    display:flex;
+
+    gap:30px;
+
+    overflow-x:auto;
+
+    scroll-behavior:smooth;
+
+    padding-bottom:20px;
+
+}
+
+.slider::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+.slider::-webkit-scrollbar-thumb{
+
+    background:#d4a017;
+
+    border-radius:50px;
+
+}
+
+.slide{
+
+    min-width:280px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transition:.35s;
+
+}
+
+.slide:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.slide img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+}
+
+.slide h3{
+
+    padding:20px;
+
+    text-align:center;
+
+    font-size:22px;
+
+}
+
+/*======================================
+FOOTER
+======================================*/
+
+footer{
+
+    background:#000;
+
+    color:white;
+
+    margin-top:120px;
+
+    padding:70px 0 30px;
+
+}
+
+.footer{
+
+    width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:40px;
+
+}
+
+.footer h3{
+
+    margin-bottom:20px;
+
+    color:#d4a017;
+
+}
+
+.footer a{
+
+    display:block;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer a:hover{
+
+    color:#d4a017;
+
+}
+
+.footer-bottom{
+
+    text-align:center;
+
+    margin-top:60px;
+
+    border-top:1px solid #333;
+
+    padding-top:25px;
+
+    color:#999;
+
+}
+
+/*======================================
+BOTÓN WHATSAPP
+======================================*/
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:34px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.whatsapp:hover{
+
+    transform:scale(1.12);
+
+}
+
+/*======================================
+ANIMACIONES
+======================================*/
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero,
+.categoria,
+.card-producto,
+.banner-importados,
+.slide{
+
+    animation:aparecer .8s ease;
+
+}
+
+/*======================================
+SCROLL SUAVE
+======================================*/
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/*======================================
+RESPONSIVE TABLET
+======================================*/
+
+@media(max-width:1200px){
+
+.header,
+.hero-text,
+.categorias,
+.productos,
+.importados,
+.carrusel,
+.footer{
+
+    width:92%;
+
+}
+
+.grid-productos{
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid-categorias{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.hero-text h1{
+
+    font-size:55px;
+
+}
+
+}
+
+/*======================================
+RESPONSIVE CELULAR
+======================================*/
+
+@media(max-width:768px){
+
+.menu{
+
+    display:none;
+
+}
+
+.header{
+
+    padding:15px;
+
+}
+
+.logo{
+
+    font-size:34px;
+
+}
+
+.hero{
+
+    height:70vh;
+
+}
+
+.hero-text h1{
+
+    font-size:40px;
+
+}
+
+.hero-text p{
+
+    font-size:22px;
+
+}
+
+.hero-botones{
+
+    flex-direction:column;
+
+}
+
+.grid-categorias{
+
+    grid-template-columns:1fr;
+
+}
+
+.grid-productos{
+
+    grid-template-columns:1fr;
+
+}
+
+.footer{
+
+    grid-template-columns:1fr;
+
+}
+
+.banner-importados{
+
+    height:280px;
+
+}
+
+.texto-importados{
+
+    left:30px;
+
+}
+
+.texto-importados h2{
+
+    font-size:34px;
+
+}
+
+.slider{
+
+    gap:20px;
+
+}
+
+.whatsapp{
+
+    width:58px;
+
+    height:58px;
+
+}
+
+}
+
+/*======================================
+HOVER GLOBAL
+======================================*/
+
+button,
+a,
+.card-producto,
+.categoria,
+.slide{
+
+    transition:.3s;
+
+}
+
+/*======================================
+SELECCIÓN DE TEXTO
+======================================*/
+
+::selection{
+
+    background:#d4a017;
+
+    color:white;
+
+}
+   
