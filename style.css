@@ -1,53 +1,58 @@
-/*==================================================
+/*========================================
 LAS 99 FRASES
 STYLE.CSS
-PARTE 1
-==================================================*/
+PARTE 1A
+========================================*/
 
-/*==============================
-GOOGLE FONT
-==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+:root{
 
-/*==============================
-RESET
-==============================*/
+--gold:#d4af37;
+--black:#111111;
+--black2:#1b1b1b;
+--white:#ffffff;
+--gray:#f5f5f5;
+--text:#666;
+--radius:18px;
+--shadow:0 15px 40px rgba(0,0,0,.15);
+--transition:.35s;
+
+}
 
 *{
+
 margin:0;
 padding:0;
 box-sizing:border-box;
+
 }
 
 html{
+
 scroll-behavior:smooth;
+
 }
 
 body{
 
 font-family:'Montserrat',sans-serif;
-
-background:#ffffff;
-
+background:#fff;
 color:#111;
-
 overflow-x:hidden;
 
 }
 
 img{
 
-max-width:100%;
-
 display:block;
+max-width:100%;
 
 }
 
 a{
 
 text-decoration:none;
-
 color:inherit;
 
 }
@@ -58,40 +63,14 @@ list-style:none;
 
 }
 
-/*==============================
-VARIABLES
-==============================*/
+/*============================
+TOPBAR
+============================*/
 
-:root{
+.topbar{
 
---negro:#111111;
-
---gris:#f5f5f5;
-
---gris2:#777777;
-
---dorado:#d4af37;
-
---blanco:#ffffff;
-
---radio:14px;
-
---sombra:0 10px 30px rgba(0,0,0,.12);
-
---transition:.35s;
-
-}
-
-/*==============================
-TOP BAR
-==============================*/
-
-.top-bar{
-
-height:42px;
-
+height:48px;
 background:#000;
-
 color:#fff;
 
 display:flex;
@@ -100,11 +79,9 @@ justify-content:center;
 
 align-items:center;
 
-gap:50px;
+gap:45px;
 
-font-size:13px;
-
-font-weight:500;
+padding:0 25px;
 
 }
 
@@ -114,57 +91,69 @@ display:flex;
 
 align-items:center;
 
-gap:8px;
+gap:12px;
 
 }
 
-/*==============================
-HEADER
-==============================*/
+.top-item i{
 
-.header{
+font-size:20px;
+
+color:var(--gold);
+
+}
+
+.top-item h4{
+
+font-size:12px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.top-item p{
+
+font-size:11px;
+
+color:#bdbdbd;
+
+}
+
+/*============================
+HEADER
+============================*/
+
+header{
 
 position:sticky;
 
 top:0;
 
-left:0;
-
-width:100%;
+z-index:9999;
 
 background:#fff;
 
-z-index:999;
-
-box-shadow:var(--sombra);
-
-transition:.3s;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 
 }
 
-.header-scroll{
-
-background:#111;
-
-color:#fff;
-
-}
-
-.header-top{
+.header-container{
 
 max-width:1400px;
 
-height:90px;
-
 margin:auto;
 
-padding:0 40px;
+height:95px;
+
+padding:0 35px;
 
 display:flex;
 
-align-items:center;
-
 justify-content:space-between;
+
+align-items:center;
 
 }
 
@@ -178,7 +167,7 @@ text-align:center;
 
 font-size:34px;
 
-font-weight:800;
+font-weight:900;
 
 letter-spacing:2px;
 
@@ -186,7 +175,7 @@ letter-spacing:2px;
 
 .logo span{
 
-color:var(--dorado);
+color:var(--gold);
 
 }
 
@@ -194,17 +183,17 @@ color:var(--dorado);
 
 font-size:11px;
 
-letter-spacing:5px;
+letter-spacing:6px;
 
-margin-top:5px;
+margin-top:6px;
 
 color:#777;
 
 }
 
-.menu-icon{
+.menu{
 
-font-size:26px;
+font-size:28px;
 
 cursor:pointer;
 
@@ -212,9 +201,9 @@ transition:.3s;
 
 }
 
-.menu-icon:hover{
+.menu:hover{
 
-color:var(--dorado);
+color:var(--gold);
 
 }
 
@@ -222,85 +211,87 @@ color:var(--dorado);
 
 display:flex;
 
-gap:18px;
+gap:15px;
 
 align-items:center;
 
 }
 
-.icono{
+.icon-circle{
 
-width:44px;
+width:46px;
 
-height:44px;
+height:46px;
 
 border-radius:50%;
 
+background:#f2f2f2;
+
 display:flex;
 
-align-items:center;
-
 justify-content:center;
+
+align-items:center;
 
 cursor:pointer;
 
 transition:.3s;
 
-background:#f3f3f3;
-
-font-size:18px;
-
 position:relative;
 
 }
 
-.icono:hover{
+.icon-circle:hover{
 
-background:var(--dorado);
+background:var(--gold);
 
 color:#fff;
 
-transform:translateY(-3px);
+transform:translateY(-4px);
 
 }
 
-.carrito span{
+.cart-btn span{
 
 position:absolute;
 
 top:-4px;
 
-right:-2px;
+right:-4px;
 
-width:22px;
+width:20px;
 
-height:22px;
+height:20px;
 
 border-radius:50%;
 
-background:red;
+background:#ff3b30;
 
 color:#fff;
-
-font-size:11px;
 
 display:flex;
 
 justify-content:center;
 
 align-items:center;
+
+font-size:11px;
 
 font-weight:bold;
 
 }
 
-/*==============================
-MENU
-==============================*/
+/*============================
+NAVBAR
+============================*/
 
-.menu{
+nav{
 
 height:60px;
+
+border-top:1px solid #eee;
+
+border-bottom:1px solid #eee;
 
 display:flex;
 
@@ -308,17 +299,19 @@ justify-content:center;
 
 align-items:center;
 
-gap:40px;
-
-border-top:1px solid #eee;
-
-border-bottom:1px solid #eee;
-
 background:#fff;
 
 }
 
-.menu a{
+nav ul{
+
+display:flex;
+
+gap:40px;
+
+}
+
+nav a{
 
 font-size:14px;
 
@@ -326,13 +319,13 @@ font-weight:700;
 
 letter-spacing:1px;
 
-transition:.3s;
-
 position:relative;
+
+transition:.3s;
 
 }
 
-.menu a::after{
+nav a::after{
 
 content:"";
 
@@ -346,1014 +339,165 @@ width:0;
 
 height:2px;
 
-background:var(--dorado);
+background:var(--gold);
 
 transition:.3s;
 
 }
 
-.menu a:hover{
+nav a:hover{
 
-color:var(--dorado);
+color:var(--gold);
 
 }
 
-.menu a:hover::after{
+nav a:hover::after{
 
 width:100%;
 
 }
+/*========================================
+LAS 99 FRASES
+STYLE.CSS
+PARTE 1B
+HERO + FONDO ANIMADO
+========================================*/
 
-/*==============================
+/*============================
 HERO
-==============================*/
+============================*/
 
 .hero{
 
-height:720px;
-
-background:url("assets/img/banner/banner1.jpg") center center/cover no-repeat;
-
 position:relative;
+
+width:100%;
+
+height:90vh;
 
 display:flex;
 
-align-items:center;
-
 justify-content:center;
 
-}
+align-items:center;
 
-.hero::before{
+overflow:hidden;
 
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:rgba(0,0,0,.45);
+background:linear-gradient(
+135deg,
+#0f0f0f,
+#181818,
+#111111
+);
 
 }
 
 .hero-overlay{
 
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.35);
+
+z-index:1;
+
+}
+
+.hero-animation{
+
+position:absolute;
+
+width:180%;
+
+height:180%;
+
+background:
+radial-gradient(circle,var(--gold) 2px,transparent 2px);
+
+background-size:70px 70px;
+
+opacity:.08;
+
+animation:fondoMove 30s linear infinite;
+
+}
+
+@keyframes fondoMove{
+
+0%{
+
+transform:translate(0,0) rotate(0deg);
+
+}
+
+100%{
+
+transform:translate(-200px,-200px) rotate(360deg);
+
+}
+
+}
+
+.hero-content{
+
 position:relative;
 
-z-index:2;
+z-index:5;
 
 text-align:center;
 
 color:#fff;
 
+max-width:900px;
+
+padding:20px;
+
+animation:heroEntrada 1s ease;
+
 }
 
-.hero-overlay p{
+.hero-content p{
 
 font-size:18px;
 
-letter-spacing:4px;
+letter-spacing:5px;
+
+text-transform:uppercase;
+
+color:var(--gold);
 
 margin-bottom:20px;
 
 }
 
-.hero-overlay h2{
+.hero-content h2{
 
 font-size:72px;
 
-font-weight:800;
+font-weight:900;
 
-margin-bottom:15px;
+line-height:1.1;
+
+margin-bottom:20px;
 
 }
 
-.hero-overlay h3{
+.hero-content h3{
 
 font-size:28px;
 
 font-weight:400;
 
-margin-bottom:40px;
+letter-spacing:3px;
 
-letter-spacing:2px;
+margin-bottom:45px;
 
-}
-
-.hero-buttons{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-flex-wrap:wrap;
-
-}
-
-.btn-principal{
-
-padding:16px 40px;
-
-background:var(--dorado);
-
-color:#fff;
-
-font-weight:700;
-
-border-radius:40px;
-
-transition:.3s;
-
-}
-
-.btn-principal:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 15px 35px rgba(212,175,55,.35);
-
-}
-
-.btn-secundario{
-
-padding:16px 40px;
-
-border:2px solid #fff;
-
-border-radius:40px;
-
-color:#fff;
-
-font-weight:700;
-
-transition:.3s;
-
-}
-
-.btn-secundario:hover{
-
-background:#fff;
-
-color:#111;
-/*==================================================
-LAS 99 FRASES
-STYLE.CSS
-PARTE 2
-CATEGORÍAS + PRODUCTOS + IMPORTADOS
-==================================================*/
-
-/*==============================
-CONTENEDOR
-==============================*/
-
-.contenedor{
-max-width:1400px;
-margin:auto;
-padding:80px 30px;
-}
-
-.titulo-seccion{
-font-size:42px;
-font-weight:800;
-text-align:center;
-margin-bottom:60px;
-letter-spacing:2px;
-color:#111;
-}
-
-.titulo-flex{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
-}
-
-.titulo-flex h2{
-font-size:38px;
-font-weight:800;
-}
-
-.titulo-flex a{
-font-weight:700;
-color:var(--dorado);
-transition:.3s;
-}
-
-.titulo-flex a:hover{
-letter-spacing:1px;
-}
-
-/*==============================
-CATEGORÍAS
-==============================*/
-
-.grid-categorias{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-}
-
-.categoria-card{
-position:relative;
-overflow:hidden;
-border-radius:18px;
-cursor:pointer;
-box-shadow:var(--sombra);
-}
-
-.categoria-card img{
-width:100%;
-height:360px;
-object-fit:cover;
-transition:.5s;
-}
-
-.categoria-card:hover img{
-transform:scale(1.08);
-}
-
-.categoria-card .overlay{
-position:absolute;
-inset:0;
-background:linear-gradient(to top,
-rgba(0,0,0,.85),
-rgba(0,0,0,.15));
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-padding:30px;
-color:#fff;
-}
-
-.overlay h3{
-font-size:30px;
-font-weight:700;
-margin-bottom:10px;
-}
-
-.overlay a{
-display:inline-block;
-background:var(--dorado);
-padding:12px 24px;
-border-radius:30px;
-font-weight:700;
-margin-top:10px;
-transition:.3s;
-}
-
-.overlay a:hover{
-transform:translateY(-3px);
-}
-
-/*==============================
-PRODUCTOS
-==============================*/
-
-.productos{
-padding:80px 0;
-background:#fff;
-}
-
-.productos-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:30px;
-}
-
-.producto{
-background:#fff;
-border-radius:18px;
-overflow:hidden;
-box-shadow:var(--sombra);
-transition:.35s;
-position:relative;
-}
-
-.producto:hover{
-transform:translateY(-10px);
-}
-
-.producto img{
-width:100%;
-height:320px;
-object-fit:cover;
-transition:.4s;
-}
-
-.producto:hover img{
-transform:scale(1.05);
-}
-
-.producto h3{
-font-size:20px;
-padding:18px 20px 8px;
-font-weight:700;
-}
-
-.producto p{
-padding:0 20px;
-font-size:22px;
-font-weight:800;
-color:var(--dorado);
-margin-bottom:20px;
-}
-
-.agregar-carrito{
-width:calc(100% - 40px);
-margin:0 20px 20px;
-height:48px;
-border:none;
-background:#111;
-color:#fff;
-font-weight:700;
-border-radius:12px;
-cursor:pointer;
-transition:.3s;
-}
-
-.agregar-carrito:hover{
-background:var(--dorado);
-}
-
-/*==============================
-ETIQUETAS
-==============================*/
-
-.badge{
-position:absolute;
-top:15px;
-left:15px;
-background:#e53935;
-color:#fff;
-padding:8px 14px;
-border-radius:30px;
-font-size:12px;
-font-weight:700;
-z-index:5;
-}
-
-.badge-premium{
-background:var(--dorado);
-color:#111;
-}
-
-.badge-nuevo{
-background:#2ecc71;
-}
-
-/*==============================
-IMPORTADOS
-==============================*/
-
-.importados{
-background:#f7f7f7;
-padding:90px 0;
-}
-
-.importados .productos-grid .producto{
-background:#fff;
-}
-
-.importados .producto img{
-height:350px;
-}
-
-/*==============================
-BOTONES
-==============================*/
-
-.btn-ver{
-display:inline-flex;
-justify-content:center;
-align-items:center;
-padding:14px 30px;
-border-radius:40px;
-background:#111;
-color:#fff;
-font-weight:700;
-transition:.3s;
-}
-
-.btn-ver:hover{
-background:var(--dorado);
-}
-
-/*==============================
-FAVORITOS
-==============================*/
-
-.favorito{
-position:absolute;
-top:15px;
-right:15px;
-width:42px;
-height:42px;
-border:none;
-border-radius:50%;
-background:#fff;
-font-size:20px;
-cursor:pointer;
-transition:.3s;
-box-shadow:0 8px 20px rgba(0,0,0,.12);
-}
-
-.favorito:hover{
-transform:scale(1.1);
-}
-
-.favorito.activo{
-background:#e53935;
-color:#fff;
-}
-
-/*==============================
-HOVER PRODUCTO
-==============================*/
-
-.producto::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:0;
-background:linear-gradient(
-transparent,
-rgba(0,0,0,.08)
-);
-transition:.3s;
-}
-
-.producto:hover::after{
-height:100%;
-   }
-   }/*==================================================
-LAS 99 FRASES
-STYLE.CSS
-PARTE 3
-CARRUSEL + INSTAGRAM + NEWSLETTER + FOOTER
-==================================================*/
-
-/*==============================
-CARRUSEL
-==============================*/
-
-.carrusel{
-
-padding:90px 0;
-
-background:#111;
-
-color:#fff;
-
-overflow:hidden;
-
-}
-
-.slider{
-
-display:flex;
-
-gap:30px;
-
-overflow-x:auto;
-
-scroll-behavior:smooth;
-
-padding:20px 0;
-
-}
-
-.slider::-webkit-scrollbar{
-
-display:none;
-
-}
-
-.slide{
-
-min-width:320px;
-
-background:#1b1b1b;
-
-border-radius:18px;
-
-overflow:hidden;
-
-box-shadow:0 12px 30px rgba(0,0,0,.35);
-
-transition:.35s;
-
-}
-
-.slide:hover{
-
-transform:translateY(-10px);
-
-}
-
-.slide img{
-
-width:100%;
-
-height:380px;
-
-object-fit:cover;
-
-}
-
-.slide h3{
-
-padding:20px;
-
-font-size:22px;
-
-font-weight:700;
-
-text-align:center;
-
-}
-
-/*==============================
-INSTAGRAM
-==============================*/
-
-.instagram{
-
-padding:90px 0;
-
-background:#fafafa;
-
-}
-
-.instagram h2{
-
-text-align:center;
-
-font-size:42px;
-
-margin-bottom:50px;
-
-font-weight:800;
-
-}
-
-.instagram-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
-}
-
-.instagram-grid img{
-
-width:100%;
-
-height:260px;
-
-object-fit:cover;
-
-border-radius:16px;
-
-transition:.35s;
-
-cursor:pointer;
-
-}
-
-.instagram-grid img:hover{
-
-transform:scale(1.05);
-
-}
-
-/*==============================
-NEWSLETTER
-==============================*/
-
-.newsletter{
-
-padding:100px 30px;
-
-background:#111;
-
-color:#fff;
-
-text-align:center;
-
-}
-
-.newsletter h2{
-
-font-size:46px;
-
-margin-bottom:20px;
-
-}
-
-.newsletter p{
-
-max-width:700px;
-
-margin:auto;
-
-margin-bottom:40px;
-
-font-size:18px;
-
-line-height:30px;
-
-color:#ccc;
-
-}
-
-.newsletter-form{
-
-display:flex;
-
-justify-content:center;
-
-gap:15px;
-
-flex-wrap:wrap;
-
-}
-
-.newsletter-form input{
-
-width:420px;
-
-height:58px;
-
-padding:0 20px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:16px;
-
-outline:none;
-
-}
-
-.newsletter-form button{
-
-height:58px;
-
-padding:0 40px;
-
-border:none;
-
-border-radius:50px;
-
-background:var(--dorado);
-
-color:#fff;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.newsletter-form button:hover{
-
-transform:translateY(-4px);
-
-}
-
-/*==============================
-BENEFICIOS
-==============================*/
-
-.b/*==================================================
-LAS 99 FRASES
-STYLE.CSS
-PARTE 4
-CARRITO + PANEL LATERAL + BUSCADOR + ANIMACIONES
-==================================================*/
-
-/*==============================
-PANEL CARRITO
-==============================*/
-
-.panel-carrito{
-
-position:fixed;
-
-top:0;
-
-right:-420px;
-
-width:420px;
-
-max-width:100%;
-
-height:100vh;
-
-background:#fff;
-
-box-shadow:-15px 0 40px rgba(0,0,0,.18);
-
-z-index:99999;
-
-display:flex;
-
-flex-direction:column;
-
-transition:.45s;
-
-}
-
-.panel-carrito.abierto{
-
-right:0;
-
-}
-
-.panel-header{
-
-height:80px;
-
-padding:0 25px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-border-bottom:1px solid #eee;
-
-}
-
-.panel-header h2{
-
-font-size:24px;
-
-font-weight:800;
-
-}
-
-.panel-header button{
-
-width:40px;
-
-height:40px;
-
-border:none;
-
-background:#111;
-
-color:#fff;
-
-border-radius:50%;
-
-cursor:pointer;
-
-font-size:18px;
-
-transition:.3s;
-
-}
-
-.panel-header button:hover{
-
-background:var(--dorado);
-
-}
-
-#listaCarrito{
-
-flex:1;
-
-overflow:auto;
-
-padding:20px;
-
-}
-
-.item-carrito{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:18px 0;
-
-border-bottom:1px solid #ececec;
-
-}
-
-.item-carrito h4{
-
-font-size:17px;
-
-margin-bottom:5px;
-
-}
-
-.item-carrito p{
-
-font-weight:700;
-
-color:var(--dorado);
-
-}
-
-.item-carrito button{
-
-width:38px;
-
-height:38px;
-
-border:none;
-
-border-radius:50%;
-
-background:#f3f3f3;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.item-carrito button:hover{
-
-background:#ff4d4d;
-
-color:#fff;
-
-}
-
-.panel-footer{
-
-padding:25px;
-
-border-top:1px solid #eee;
-
-}
-
-.panel-footer h3{
-
-margin-bottom:20px;
-
-font-size:24px;
-
-}
-
-.panel-footer button{
-
-width:100%;
-
-height:52px;
-
-border:none;
-
-border-radius:12px;
-
-margin-top:12px;
-
-font-weight:700;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-#vaciarCarrito{
-
-background:#ececec;
-
-}
-
-#comprarAhora{
-
-background:var(--dorado);
-
-color:#fff;
-
-}
-
-.panel-footer button:hover{
-
-transform:translateY(-3px);
-
-}
-
-/*==============================
-BUSCADOR
-==============================*/
-
-.buscador{
-
-width:100%;
-
-padding:50px 30px;
-
-background:#fafafa;
-
-}
-
-.buscador input{
-
-width:100%;
-
-height:60px;
-
-border:2px solid #ddd;
-
-border-radius:50px;
-
-padding:0 25px;
-
-font-size:17px;
-
-outline:none;
-
-transition:.3s;
-
-}
-
-.buscador input:focus{
-
-border-color:var(--dorado);
-
-}
-
-/*==============================
-LOADER
-==============================*/
-
-.loader{
-
-position:fixed;
-
-inset:0;
-
-background:#fff;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:999999;
-
-}
-
-.loader::after{
-
-content:"";
-
-width:70px;
-
-height:70px;
-
-border-radius:50%;
-
-border:7px solid #eee;
-
-border-top-color:var(--dorado);
-
-animation:girar 1s linear infinite;
-
-}
-
-@keyframes girar{
-
-100%{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-/*==============================
-ANIMACIONES
-==============================*/
-
-.mostrar{
-
-animation:aparecer .7s ease forwards;
+color:#ddd;
 
 }
 
-@keyframes aparecer{
+@keyframes heroEntrada{
 
 from{
 
@@ -1373,488 +517,1098 @@ transform:translateY(0);
 
 }
 
-.fade{
+.hero-buttons{
 
-animation:fade .5s;
+display:flex;
 
-}
+justify-content:center;
 
-@keyframes fade{
+gap:20px;
 
-from{
-
-opacity:0;
+flex-wrap:wrap;
 
 }
 
-to{
+.btn-gold{
 
-opacity:1;
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:16px 38px;
+
+background:var(--gold);
+
+color:#fff;
+
+border-radius:40px;
+
+font-weight:700;
+
+transition:var(--transition);
+
+box-shadow:0 15px 35px rgba(212,175,55,.30);
+
+}
+
+.btn-gold:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 45px rgba(212,175,55,.45);
+
+}
+
+.btn-border{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:16px 38px;
+
+border:2px solid #fff;
+
+border-radius:40px;
+
+font-weight:700;
+
+color:#fff;
+
+transition:var(--transition);
+
+}
+
+.btn-border:hover{
+
+background:#fff;
+
+color:#111;
+
+}
+
+/*============================
+SLIDER DOTS
+============================*/
+
+.hero-dots{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+gap:12px;
+
+z-index:10;
+
+}
+
+.hero-dots span{
+
+width:14px;
+
+height:14px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.hero-dots span.active{
+
+background:var(--gold);
+
+transform:scale(1.25);
+
+}
+
+/*============================
+LUZ DORADA
+============================*/
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:700px;
+
+height:700px;
+
+border-radius:50%;
+
+background:radial-gradient(
+circle,
+rgba(212,175,55,.18),
+transparent 70%
+);
+
+filter:blur(60px);
+
+animation:glow 8s ease-in-out infinite;
+
+}
+
+@keyframes glow{
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:.5;
+
+}
+
+50%{
+
+transform:scale(1.2);
+
+opacity:.9;
+
+}
+
+}/*========================================
+LAS 99 FRASES
+STYLE.CSS
+PARTE 2A
+CATEGORÍAS
+========================================*/
+
+.categorias{
+
+padding:100px 40px;
+
+background:#fafafa;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+font-size:46px;
+
+font-weight:800;
+
+color:#111;
+
+margin-bottom:10px;
+
+}
+
+.section-title p{
+
+font-size:18px;
+
+color:#777;
+
+}
+
+.categorias-grid{
+
+max-width:1400px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.categoria-card{
+
+position:relative;
+
+height:420px;
+
+border-radius:24px;
+
+overflow:hidden;
+
+cursor:pointer;
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+transition:.4s;
+
+background:#181818;
+
+}
+
+.categoria-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.categoria-bg{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+135deg,
+#222,
+#111,
+#333
+);
+
+background-size:400% 400%;
+
+animation:fondoCategoria 8s linear infinite;
+
+}
+
+@keyframes fondoCategoria{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
 
 }
 
 }
 
-.zoom{
+.categoria-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+to top,
+rgba(0,0,0,.85),
+rgba(0,0,0,.15)
+);
+
+}
+
+.categoria-card h3{
+
+position:absolute;
+
+left:30px;
+
+bottom:65px;
+
+color:#fff;
+
+font-size:34px;
+
+font-weight:800;
+
+z-index:2;
+
+}
+
+.categoria-card span{
+
+position:absolute;
+
+left:30px;
+
+bottom:30px;
+
+display:inline-block;
+
+padding:10px 22px;
+
+border-radius:30px;
+
+background:var(--gold);
+
+color:#fff;
+
+font-size:14px;
+
+font-weight:700;
+
+z-index:2;
+
+transition:.3s;
+
+}
+
+.categoria-card:hover span{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 25px rgba(212,175,55,.35);
+
+}
+
+.categoria-card::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.05);
+
+top:-40px;
+
+right:-40px;
+
+z-index:1;
+
+}
+
+.categoria-card::after{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+border-radius:50%;
+
+background:rgba(212,175,55,.08);
+
+bottom:-30px;
+
+left:-30px;
+
+z-index:1;
+
+}
+/*========================================
+LAS 99 FRASES
+STYLE.CSS
+PARTE 2B
+DROP EXCLUSIVO
+========================================*/
+
+.destacados{
+
+max-width:1400px;
+
+margin:100px auto;
+
+padding:0 30px;
+
+display:grid;
+
+grid-template-columns:420px 1fr;
+
+gap:40px;
+
+align-items:start;
+
+}
+
+/*============================
+DROP CARD
+============================*/
+
+.drop-card{
+
+background:#111;
+
+border-radius:24px;
+
+padding:35px;
+
+color:#fff;
+
+box-shadow:0 20px 45px rgba(0,0,0,.20);
+
+border:2px solid rgba(212,175,55,.25);
+
+position:relative;
 
 overflow:hidden;
 
 }
 
-.zoom img{
+.drop-card::before{
 
-transition:.5s;
+content:"";
 
-}
+position:absolute;
 
-.zoom:hover img{
+top:-120px;
 
-transform:scale(1.08);
-
-}
-
-/*==============================
-SCROLLBAR
-==============================*/
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-::-webkit-scrollbar-track{
-
-background:#f1f1f1;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:var(--dorado);
-
-border-radius:20px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-background:#b89228;
-
-}/*==================================================
-LAS 99 FRASES
-STYLE.CSS
-PARTE 5
-RESPONSIVE + MODO OSCURO + EFECTOS FINALES
-==================================================*/
-
-/*==============================
-EFECTOS GENERALES
-==============================*/
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-animation:fadeBody .5s ease;
-}
-
-@keyframes fadeBody{
-
-from{
-
-opacity:0;
-
-}
-
-to{
-
-opacity:1;
-
-}
-
-}
-
-::selection{
-
-background:var(--dorado);
-
-color:#fff;
-
-}
-
-button{
-
-font-family:inherit;
-
-}
-
-input{
-
-font-family:inherit;
-
-}
-
-img{
-
-user-select:none;
-
--webkit-user-drag:none;
-
-}
-
-/*==============================
-TRANSICIONES
-==============================*/
-
-button,
-a,
-img,
-.card,
-.producto,
-.categoria-card,
-.icono,
-.menu a{
-
-transition:.35s ease;
-
-}
-
-/*==============================
-RESPONSIVE
-==============================*/
-
-@media(max-width:1200px){
-
-.productos-grid{
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-.grid-categorias{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.footer-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.hero-overlay h2{
-
-font-size:60px;
-
-}
-
-}
-
-@media(max-width:992px){
-
-.top-bar{
-
-display:none;
-
-}
-
-.header-top{
-
-padding:0 20px;
-
-}
-
-.menu{
-
-gap:20px;
-
-font-size:13px;
-
-overflow-x:auto;
-
-justify-content:flex-start;
-
-padding:0 20px;
-
-}
-
-.hero{
-
-height:600px;
-
-}
-
-.hero-overlay h2{
-
-font-size:48px;
-
-}
-
-.hero-overlay h3{
-
-font-size:22px;
-
-}
-
-.productos-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-.instagram-grid{
-
-grid-template-columns:repeat(3,1fr);
-
-}
-
-.beneficios{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:768px){
-
-.logo h1{
-
-font-size:28px;
-
-}
-
-.header-icons{
-
-gap:10px;
-
-}
-
-.icono{
-
-width:40px;
-
-height:40px;
-
-}
-
-.hero{
-
-height:520px;
-
-}
-
-.hero-overlay h2{
-
-font-size:38px;
-
-}
-
-.hero-overlay h3{
-
-font-size:18px;
-
-}
-
-.hero-buttons{
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.btn-principal,
-
-.btn-secundario{
+right:-120px;
 
 width:260px;
 
+height:260px;
+
+border-radius:50%;
+
+background:rgba(212,175,55,.08);
+
+}
+
+.drop-header{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.drop-header h2{
+
+font-size:34px;
+
+font-weight:800;
+
+margin-bottom:10px;
+
+color:var(--gold);
+
+}
+
+.drop-header p{
+
+color:#ccc;
+
+margin-bottom:35px;
+
+}
+
+.contador-drop{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:12px;
+
+margin-bottom:35px;
+
+}
+
+.contador-drop div{
+
+background:#1d1d1d;
+
+border-radius:16px;
+
+padding:18px 10px;
+
 text-align:center;
 
 }
 
-.grid-categorias{
+.contador-drop h3{
 
-grid-template-columns:1fr;
+font-size:32px;
+
+font-weight:800;
+
+color:var(--gold);
+
+margin-bottom:5px;
+
+}
+
+.contador-drop span{
+
+font-size:13px;
+
+color:#bbb;
+
+text-transform:uppercase;
+
+}
+
+.drop-gallery{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:12px;
+
+margin-bottom:30px;
+
+}
+
+.drop-img{
+
+height:120px;
+
+border-radius:14px;
+
+background:linear-gradient(
+135deg,
+#2d2d2d,
+#444,
+#222
+);
+
+background-size:300% 300%;
+
+animation:dropMove 6s linear infinite;
+
+}
+
+@keyframes dropMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+.drop-btn{
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+height:55px;
+
+font-size:16px;
+
+font-weight:700;
+
+border-radius:40px;
+
+}
+
+/*============================
+IMPORTADOS
+============================*/
+
+.importados{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.section-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:10px;
+
+}
+
+.section-head h2{
+
+font-size:38px;
+
+font-weight:800;
+
+}
+
+.section-head a{
+
+font-weight:700;
+
+color:var(--gold);
+
+}
+
+.importados>p{
+
+color:#777;
+
+font-size:16px;
+
+margin-bottom:10px;
+
+}
+
+.marcas{
+
+display:grid;
+
+grid-template-columns:repeat(6,1fr);
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.marcas div{
+
+height:60px;
+
+border-radius:14px;
+
+background:#f7f7f7;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.marcas div:hover{
+
+background:var(--gold);
+
+color:#fff;
+
+transform:translateY(-4px);
+
+}/*========================================
+LAS 99 FRASES
+STYLE.CSS
+PARTE 3A
+PRODUCTOS PREMIUM
+========================================*/
+
+.productos{
+
+padding:100px 40px;
+
+background:#fff;
 
 }
 
 .productos-grid{
 
-grid-template-columns:1fr;
+max-width:1400px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
 
 }
 
-.instagram-grid{
+.import-card,
+.product-card{
 
-grid-template-columns:repeat(2,1fr);
+position:relative;
 
-}
+background:#fff;
 
-.footer-grid{
+border-radius:22px;
 
-grid-template-columns:1fr;
+overflow:hidden;
 
-text-align:center;
+box-shadow:0 18px 40px rgba(0,0,0,.10);
 
-}
-
-.newsletter-form{
-
-flex-direction:column;
-
-align-items:center;
+transition:.35s;
 
 }
 
-.newsletter-form input{
+.import-card:hover,
+.product-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 55px rgba(0,0,0,.18);
+
+}
+
+.img-animation{
 
 width:100%;
 
-max-width:420px;
+height:320px;
+
+background:linear-gradient(
+135deg,
+#222,
+#444,
+#222,
+#555
+);
+
+background-size:400% 400%;
+
+animation:productMove 7s linear infinite;
 
 }
 
-.newsletter-form button{
+@keyframes productMove{
 
-width:100%;
+0%{background-position:0% 50%;}
 
-max-width:420px;
+50%{background-position:100% 50%;}
 
-}
-
-.panel-carrito{
-
-width:100%;
+100%{background-position:0% 50%;}
 
 }
 
-}
+.product-card h3,
+.import-card h3{
 
-@media(max-width:480px){
+font-size:21px;
 
-.hero{
+font-weight:700;
 
-height:460px;
-
-}
-
-.hero-overlay p{
-
-font-size:14px;
+padding:20px 20px 8px;
 
 }
 
-.hero-overlay h2{
+.product-card span,
+.import-card span{
 
-font-size:30px;
+display:block;
 
-}
+padding:0 20px;
 
-.hero-overlay h3{
+font-size:26px;
 
-font-size:16px;
+font-weight:800;
 
-}
+color:var(--gold);
 
-.titulo-seccion,
-
-.titulo-flex h2{
-
-font-size:30px;
+margin-bottom:20px;
 
 }
 
-.instagram-grid{
+.product-card button,
+.import-card button{
 
-grid-template-columns:1fr;
+width:calc(100% - 40px);
 
-}
+margin:0 20px 22px;
 
-.beneficios{
+height:52px;
 
-grid-template-columns:1fr;
+border:none;
 
-}
-
-.whatsapp{
-
-width:58px;
-
-height:58px;
-
-font-size:30px;
-
-right:18px;
-
-bottom:18px;
-
-}
-
-#subir{
-
-right:18px;
-
-bottom:90px;
-
-width:50px;
-
-height:50px;
-
-}
-
-}
-
-/*==============================
-MODO OSCURO (PREPARADO)
-==============================*/
-
-.dark{
+border-radius:14px;
 
 background:#111;
 
 color:#fff;
 
-}
+font-size:15px;
 
-.dark .header{
+font-weight:700;
 
-background:#181818;
+cursor:pointer;
 
-}
-
-.dark .menu{
-
-background:#181818;
-
-border-color:#222;
+transition:.3s;
 
 }
 
-.dark .producto{
+.product-card button:hover,
+.import-card button:hover{
 
-background:#1b1b1b;
+background:var(--gold);
+
+}/*========================================
+LAS 99 FRASES
+STYLE.CSS
+PARTE 3B
+EFECTOS PREMIUM PRODUCTOS
+========================================*/
+
+.product-card .favorito,
+.import-card .favorito{
+
+position:absolute;
+
+top:18px;
+
+right:18px;
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+cursor:pointer;
+
+transition:.3s;
+
+z-index:5;
+
+}
+
+.product-card .favorito:hover,
+.import-card .favorito:hover{
+
+background:#ff3b5c;
+
+color:#fff;
+
+transform:scale(1.1);
+
+}
+
+.etiqueta{
+
+position:absolute;
+
+top:18px;
+
+left:18px;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+background:var(--gold);
+
+color:#fff;
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+z-index:5;
+
+}
+
+.etiqueta.oferta{
+
+background:#ff4d4d;
+
+}
+
+.etiqueta.top{
+
+background:#111;
+
+}
+
+.product-info{
+
+padding:20px;
+
+}
+
+.product-info p{
+
+font-size:14px;
+
+color:#777;
+
+line-height:22px;
+
+margin-bottom:15px;
+
+}
+
+.talles{
+
+display:flex;
+
+gap:8px;
+
+margin-bottom:18px;
+
+flex-wrap:wrap;
+
+}
+
+.talles span{
+
+padding:7px 12px;
+
+background:#f2f2f2;
+
+border-radius:8px;
+
+font-size:13px;
+
+font-weight:700;
+
+color:#444;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.talles span:hover{
+
+background:var(--gold);
 
 color:#fff;
 
 }
 
-.dark .categoria-card{
+.product-footer{
 
-box-shadow:none;
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 20px 22px;
 
 }
 
-.dark .footer{
+.precio{
 
-background:#000;
+font-size:28px;
+
+font-weight:800;
+
+color:var(--gold);
 
 }
 
-/*==============================
-FIN DEL ARCHIVO
-==============================*/
+.btn-add{
+
+padding:12px 22px;
+
+border:none;
+
+border-radius:12px;
+
+background:#111;
+
+color:#fff;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.btn-add:hover{
+
+background:var(--gold);
+
+transform:translateY(-3px);
+
+}
+
+.product-card:hover .img-animation,
+.import-card:hover .img-animation{
+
+transform:scale(1.08);
+
+}
+
+.img-animation{
+
+transition:.5s;
+
+}
+
+.product-card::after,
+.import-card::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:0;
+
+width:100%;
+
+height:5px;
+
+background:linear-gradient(90deg,var(--gold),transparent);
+
+transform:scaleX(0);
+
+transform-origin:left;
+
+transition:.4s;
+
+}
+
+.product-card:hover::after,
+.import-card:hover::after{
+
+transform:scaleX(1);
+
+}
