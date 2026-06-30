@@ -1,74 +1,89 @@
-/*=========================================
-LAS 99 FRASES
-SCRIPT.JS
-VERSIÓN 1.0
-=========================================*/
+/*==================================================
+  LAS 99 FRASES
+  SCRIPT.JS
+  PARTE 1
+==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*=========================
-      HEADER AL HACER SCROLL
-    =========================*/
+    console.log("LAS 99 FRASES iniciada correctamente");
+
+    iniciarHeader();
+    iniciarBotonSubir();
+    iniciarToast();
+    iniciarAnimaciones();
+
+});
+
+/*==================================================
+HEADER
+==================================================*/
+
+function iniciarHeader(){
 
     const header = document.querySelector(".header");
 
-    window.addEventListener("scroll", () => {
+    if(!header) return;
 
-        if (window.scrollY > 50) {
+    window.addEventListener("scroll",()=>{
 
-            header.style.background = "#000";
-            header.style.boxShadow = "0 10px 30px rgba(0,0,0,.30)";
+        if(window.scrollY > 60){
 
-        } else {
+            header.classList.add("header-scroll");
 
-            header.style.background = "rgba(0,0,0,.95)";
-            header.style.boxShadow = "none";
+        }else{
 
-        }
-
-    });
-
-    /*=========================
-      BOTÓN VOLVER ARRIBA
-    =========================*/
-
-    const volver = document.createElement("button");
-
-    volver.innerHTML = "↑";
-
-    volver.id = "volverArriba";
-
-    document.body.appendChild(volver);
-
-    volver.style.position = "fixed";
-    volver.style.bottom = "100px";
-    volver.style.right = "30px";
-    volver.style.width = "55px";
-    volver.style.height = "55px";
-    volver.style.border = "none";
-    volver.style.borderRadius = "50%";
-    volver.style.background = "#d4a017";
-    volver.style.color = "white";
-    volver.style.fontSize = "24px";
-    volver.style.cursor = "pointer";
-    volver.style.display = "none";
-    volver.style.zIndex = "9999";
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 300) {
-
-            volver.style.display = "block";
-
-        } else {
-
-            volver.style.display = "none";
+            header.classList.remove("header-scroll");
 
         }
 
     });
 
-    volver.onclick = () => {
+}
+
+/*==================================================
+BOTÓN VOLVER ARRIBA
+==================================================*/
+
+function iniciarBotonSubir(){
+
+    const boton = document.createElement("button");
+
+    boton.id = "btnSubir";
+
+    boton.innerHTML = "↑";
+
+    document.body.appendChild(boton);
+
+    boton.style.position = "fixed";
+    boton.style.bottom = "100px";
+    boton.style.right = "25px";
+    boton.style.width = "55px";
+    boton.style.height = "55px";
+    boton.style.borderRadius = "50%";
+    boton.style.border = "none";
+    boton.style.background = "#d4af37";
+    boton.style.color = "#fff";
+    boton.style.fontSize = "24px";
+    boton.style.cursor = "pointer";
+    boton.style.display = "none";
+    boton.style.zIndex = "9999";
+
+    window.addEventListener("scroll",()=>{
+
+        if(window.scrollY>300){
+
+            boton.style.display="block";
+
+        }else{
+
+            boton.style.display="none";
+
+        }
+
+    });
+
+    boton.addEventListener("click",()=>{
 
         window.scrollTo({
 
@@ -78,108 +93,108 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-    };
+    });
 
-    /*=========================
-      CARRITO
-    =========================*/
+}
 
-    let cantidad = 0;
+/*==================================================
+TOAST
+==================================================*/
 
-    const contador = document.querySelector(".carrito span");
+let toast;
 
-    const botonesComprar = document.querySelectorAll(".btn-comprar");
+function iniciarToast(){
 
-    botonesComprar.forEach(boton=>{
+    toast=document.createElement("div");
 
-        boton.addEventListener("click",(e)=>{
+    toast.id="toast";
 
-            e.preventDefault();
+    toast.style.position="fixed";
+    toast.style.top="100px";
+    toast.style.left="50%";
+    toast.style.transform="translateX(-50%)";
+    toast.style.background="#111";
+    toast.style.color="#fff";
+    toast.style.padding="15px 30px";
+    toast.style.borderRadius="12px";
+    toast.style.opacity="0";
+    toast.style.transition=".3s";
+    toast.style.zIndex="99999";
 
-            cantidad++;
+    document.body.appendChild(toast);
 
-            contador.textContent = cantidad;
+}
 
-            mostrarMensaje("Producto agregado al carrito");
+function mostrarToast(texto){
+
+    toast.innerHTML=texto;
+
+    toast.style.opacity="1";
+
+    clearTimeout(toast.timer);
+
+    toast.timer=setTimeout(()=>{
+
+        toast.style.opacity="0";
+
+    },2200);
+
+}
+
+/*==================================================
+ANIMACIONES
+==================================================*/
+
+function iniciarAnimaciones(){
+
+    const elementos=document.querySelectorAll(
+
+        ".card,.card-producto,.slide"
+
+    );
+
+    const observer=new IntersectionObserver((items)=>{
+
+        items.forEach(item=>{
+
+            if(item.isIntersecting){
+
+                item.target.style.opacity="1";
+
+                item.target.style.transform="translateY(0px)";
+
+            }
 
         });
 
     });
 
-    /*=========================
-      FAVORITOS
-    =========================*/
+    elementos.forEach(el=>{
 
-    const favorito = document.querySelectorAll(".icono")[1];
+        el.style.opacity="0";
 
-    let activo = false;
+        el.style.transform="translateY(40px)";
 
-    favorito.addEventListener("click",()=>{
+        el.style.transition=".7s";
 
-        activo=!activo;
-
-        favorito.textContent = activo ? "💛" : "❤";
+        observer.observe(el);
 
     });
 
-    /*=========================
-      BUSCADOR
-    =========================*/
+}
 
-    const buscar = document.querySelectorAll(".icono")[0];
+/*==================================================
+UTILIDADES
+==================================================*/
 
-    buscar.addEventListener("click",()=>{
+function $(selector){
 
-        const texto = prompt("¿Qué estás buscando?");
+    return document.querySelector(selector);
 
-        if(texto){
+}
 
-            mostrarMensaje("Buscando: " + texto);
+function $$(selector){
 
-        }
+    return document.querySelectorAll(selector);
 
-    });
-
-    /*=========================
-      MENSAJES
-    =========================*/
-
-    function mostrarMensaje(texto){
-
-        const aviso=document.createElement("div");
-
-        aviso.innerText=texto;
-
-        aviso.style.position="fixed";
-
-        aviso.style.left="50%";
-
-        aviso.style.top="100px";
-
-        aviso.style.transform="translateX(-50%)";
-
-        aviso.style.background="#111";
-
-        aviso.style.color="white";
-
-        aviso.style.padding="15px 30px";
-
-        aviso.style.borderRadius="10px";
-
-        aviso.style.zIndex="99999";
-
-        aviso.style.boxShadow="0 10px 25px rgba(0,0,0,.3)";
-
-        document.body.appendChild(aviso);
-
-        setTimeout(()=>{
-
-            aviso.remove();
-
-        },2000);
-
-    }
-
-    console.log("LAS 99 FRASES cargado correctamente");
-
-});
+}
