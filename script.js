@@ -1,209 +1,185 @@
-// ===============================
-// LAS 99 FRASES - SCRIPT.JS
-// ===============================
+/*=========================================
+LAS 99 FRASES
+SCRIPT.JS
+VERSIÓN 1.0
+=========================================*/
 
-let carrito = [];
-let total = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
+    /*=========================
+      HEADER AL HACER SCROLL
+    =========================*/
 
-// Productos de ejemplo
-const productos = [
-    {
-        id: 1,
-        nombre: "Remera Oversize Negra",
-        precio: 19990,
-        categoria: "ropa",
-        imagen: "img/remera1.jpg"
-    },
-    {
-        id: 2,
-        nombre: "Buzo Premium",
-        precio: 34990,
-        categoria: "ropa",
-        imagen: "img/buzo1.jpg"
-    },
-    {
-        id: 3,
-        nombre: "Importado Exclusivo",
-        precio: 49990,
-        categoria: "importados",
-        imagen: "img/importado1.jpg"
-    }
-];
+    const header = document.querySelector(".header");
 
+    window.addEventListener("scroll", () => {
 
-// ===============================
-// CARGAR PRODUCTOS
-// ===============================
+        if (window.scrollY > 50) {
 
-const contenedor = document.querySelector(".productos");
+            header.style.background = "#000";
+            header.style.boxShadow = "0 10px 30px rgba(0,0,0,.30)";
 
-function mostrarProductos(lista = productos){
+        } else {
 
-    if(!contenedor) return;
-
-    contenedor.innerHTML = "";
-
-    lista.forEach(producto => {
-
-        contenedor.innerHTML += `
-
-        <div class="card-producto">
-
-            <img src="${producto.imagen}">
-
-            <h3>${producto.nombre}</h3>
-
-            <p>$${producto.precio}</p>
-
-            <button onclick="agregarCarrito(${producto.id})">
-                Comprar
-            </button>
-
-        </div>
-
-        `;
-
-    });
-
-}
-
-
-mostrarProductos();
-
-
-// ===============================
-// CARRITO
-// ===============================
-
-function agregarCarrito(id){
-
-    let producto = productos.find(p => p.id === id);
-
-    carrito.push(producto);
-
-    total += producto.precio;
-
-    actualizarCarrito();
-
-    alert(producto.nombre + " agregado al carrito");
-
-}
-
-
-
-function actualizarCarrito(){
-
-    const contador = document.querySelector("#contador");
-
-    if(contador){
-        contador.innerHTML = carrito.length;
-    }
-
-
-    const totalBox = document.querySelector("#total");
-
-    if(totalBox){
-        totalBox.innerHTML = "$" + total;
-    }
-
-}
-
-
-
-// ===============================
-// FILTROS
-// ===============================
-
-function filtrar(categoria){
-
-    if(categoria === "todos"){
-        mostrarProductos(productos);
-        return;
-    }
-
-
-    let filtrados = productos.filter(
-        p => p.categoria === categoria
-    );
-
-
-    mostrarProductos(filtrados);
-
-}
-
-
-
-// ===============================
-// WHATSAPP
-// ===============================
-
-function comprarWhatsApp(){
-
-    let mensaje = "Hola! Quiero comprar:%0A";
-
-
-    carrito.forEach(producto=>{
-
-        mensaje += 
-        "- " + producto.nombre +
-        " $" + producto.precio +
-        "%0A";
-
-    });
-
-
-    mensaje += "%0ATotal: $" + total;
-
-
-    window.open(
-        "https://wa.me/5490000000000?text=" + mensaje,
-        "_blank"
-    );
-
-}
-
-
-
-// ===============================
-// MENU MOBILE
-// ===============================
-
-const menu = document.querySelector(".menu");
-const nav = document.querySelector(".nav");
-
-
-if(menu){
-
-    menu.onclick = () => {
-
-        nav.classList.toggle("active");
-
-    };
-
-}
-
-
-
-// ===============================
-// ANIMACIONES SCROLL
-// ===============================
-
-window.addEventListener("scroll",()=>{
-
-    document.querySelectorAll(".card-producto")
-    .forEach(card=>{
-
-        let posicion =
-        card.getBoundingClientRect().top;
-
-
-        if(posicion < window.innerHeight - 100){
-
-            card.classList.add("mostrar");
+            header.style.background = "rgba(0,0,0,.95)";
+            header.style.boxShadow = "none";
 
         }
 
     });
+
+    /*=========================
+      BOTÓN VOLVER ARRIBA
+    =========================*/
+
+    const volver = document.createElement("button");
+
+    volver.innerHTML = "↑";
+
+    volver.id = "volverArriba";
+
+    document.body.appendChild(volver);
+
+    volver.style.position = "fixed";
+    volver.style.bottom = "100px";
+    volver.style.right = "30px";
+    volver.style.width = "55px";
+    volver.style.height = "55px";
+    volver.style.border = "none";
+    volver.style.borderRadius = "50%";
+    volver.style.background = "#d4a017";
+    volver.style.color = "white";
+    volver.style.fontSize = "24px";
+    volver.style.cursor = "pointer";
+    volver.style.display = "none";
+    volver.style.zIndex = "9999";
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            volver.style.display = "block";
+
+        } else {
+
+            volver.style.display = "none";
+
+        }
+
+    });
+
+    volver.onclick = () => {
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    };
+
+    /*=========================
+      CARRITO
+    =========================*/
+
+    let cantidad = 0;
+
+    const contador = document.querySelector(".carrito span");
+
+    const botonesComprar = document.querySelectorAll(".btn-comprar");
+
+    botonesComprar.forEach(boton=>{
+
+        boton.addEventListener("click",(e)=>{
+
+            e.preventDefault();
+
+            cantidad++;
+
+            contador.textContent = cantidad;
+
+            mostrarMensaje("Producto agregado al carrito");
+
+        });
+
+    });
+
+    /*=========================
+      FAVORITOS
+    =========================*/
+
+    const favorito = document.querySelectorAll(".icono")[1];
+
+    let activo = false;
+
+    favorito.addEventListener("click",()=>{
+
+        activo=!activo;
+
+        favorito.textContent = activo ? "💛" : "❤";
+
+    });
+
+    /*=========================
+      BUSCADOR
+    =========================*/
+
+    const buscar = document.querySelectorAll(".icono")[0];
+
+    buscar.addEventListener("click",()=>{
+
+        const texto = prompt("¿Qué estás buscando?");
+
+        if(texto){
+
+            mostrarMensaje("Buscando: " + texto);
+
+        }
+
+    });
+
+    /*=========================
+      MENSAJES
+    =========================*/
+
+    function mostrarMensaje(texto){
+
+        const aviso=document.createElement("div");
+
+        aviso.innerText=texto;
+
+        aviso.style.position="fixed";
+
+        aviso.style.left="50%";
+
+        aviso.style.top="100px";
+
+        aviso.style.transform="translateX(-50%)";
+
+        aviso.style.background="#111";
+
+        aviso.style.color="white";
+
+        aviso.style.padding="15px 30px";
+
+        aviso.style.borderRadius="10px";
+
+        aviso.style.zIndex="99999";
+
+        aviso.style.boxShadow="0 10px 25px rgba(0,0,0,.3)";
+
+        document.body.appendChild(aviso);
+
+        setTimeout(()=>{
+
+            aviso.remove();
+
+        },2000);
+
+    }
+
+    console.log("LAS 99 FRASES cargado correctamente");
 
 });
