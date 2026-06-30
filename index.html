@@ -11,12 +11,13 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
@@ -26,26 +27,62 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <!-- BARRA SUPERIOR -->
 <!-- ========================= -->
 
-<div class="top-bar">
+<div class="topbar">
 
 <div class="top-item">
-<i class="fa-solid fa-truck"></i>
-<span>Envíos a todo el país</span>
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+
+<h4>ENVÍOS A TODO EL PAÍS</h4>
+
+<p>Compras superiores a $80.000</p>
+
+</div>
+
 </div>
 
 <div class="top-item">
+
 <i class="fa-regular fa-credit-card"></i>
-<span>3 Cuotas sin interés</span>
+
+<div>
+
+<h4>3 CUOTAS SIN INTERÉS</h4>
+
+<p>Con tarjetas seleccionadas</p>
+
+</div>
+
 </div>
 
 <div class="top-item">
-<i class="fa-solid fa-rotate-left"></i>
-<span>Cambios y devoluciones</span>
+
+<i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+<div>
+
+<h4>CAMBIOS Y DEVOLUCIONES</h4>
+
+<p>Hasta 30 días</p>
+
+</div>
+
 </div>
 
 <div class="top-item">
+
 <i class="fa-solid fa-lock"></i>
-<span>Compra 100% segura</span>
+
+<div>
+
+<h4>COMPRA 100% SEGURA</h4>
+
+<p>Tus datos protegidos</p>
+
+</div>
+
 </div>
 
 </div>
@@ -54,23 +91,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <!-- HEADER -->
 <!-- ========================= -->
 
-<header class="header">
+<header>
 
-<div class="header-top">
+<div class="header-container">
 
-<div class="menu-icon">
+<div class="menu">
+
 <i class="fa-solid fa-bars"></i>
+
 </div>
 
 <div class="logo">
 
-<h1>
-
-LAS <span>99</span><br>
-
-FRASES
-
-</h1>
+<h1>LAS <span>99</span> FRASES</h1>
 
 <p>CLOTHING BRAND</p>
 
@@ -78,23 +111,29 @@ FRASES
 
 <div class="header-icons">
 
-<div class="icono">
+<div class="icon-circle">
+
 <i class="fa-solid fa-magnifying-glass"></i>
+
 </div>
 
-<div class="icono">
+<div class="icon-circle">
+
 <i class="fa-regular fa-user"></i>
+
 </div>
 
-<div class="icono">
+<div class="icon-circle">
+
 <i class="fa-regular fa-heart"></i>
+
 </div>
 
-<div class="icono carrito">
+<div class="icon-circle cart-btn">
 
 <i class="fa-solid fa-cart-shopping"></i>
 
-<span id="contador-carrito">0</span>
+<span id="contador">0</span>
 
 </div>
 
@@ -102,27 +141,29 @@ FRASES
 
 </div>
 
-<!-- ========================= -->
-<!-- MENU -->
-<!-- ========================= -->
+<nav>
 
-<nav class="menu">
+<ul>
 
-<a href="#">INICIO</a>
+<li><a href="#">INICIO</a></li>
 
-<a href="#">HOMBRE</a>
+<li><a href="#">HOMBRE</a></li>
 
-<a href="#">MUJER</a>
+<li><a href="#">MUJER</a></li>
 
-<a href="#">IMPORTADOS</a>
+<li><a href="#">IMPORTADOS</a></li>
 
-<a href="#">NUEVOS INGRESOS</a>
+<li><a href="#">NUEVOS INGRESOS</a></li>
 
-<a href="#">OFERTAS</a>
+<li><a href="#">OFERTAS</a></li>
 
-<a href="#">CONTACTO</a>
+<li><a href="#">CONTACTO</a></li>
+
+</ul>
 
 </nav>
+
+</header>
 
 <!-- ========================= -->
 <!-- HERO -->
@@ -130,31 +171,27 @@ FRASES
 
 <section class="hero">
 
-<div class="hero-overlay">
+<div class="hero-overlay"></div>
+
+<div class="hero-animation"></div>
+
+<div class="hero-content">
 
 <p>Colección 2026</p>
 
-<h2>
+<h2>VESTITE DIFERENTE</h2>
 
-VESTITE DIFERENTE
-
-</h2>
-
-<h3>
-
-EXPRESÁ QUIÉN SOS
-
-</h3>
+<h3>EXPRESÁ QUIÉN SOS</h3>
 
 <div class="hero-buttons">
 
-<a href="#" class="btn-principal">
+<a href="#" class="btn-gold">
 
 Comprar Ahora
 
 </a>
 
-<a href="#" class="btn-secundario">
+<a href="#" class="btn-border">
 
 Ver Importados
 
@@ -164,66 +201,69 @@ Ver Importados
 
 </div>
 
+<div class="hero-dots">
+
+<span class="active"></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
 </section><!-- ========================= -->
 <!-- CATEGORÍAS -->
 <!-- ========================= -->
 
 <section class="categorias">
 
-<div class="contenedor">
+<div class="section-title">
+<h2>Categorías</h2>
+<p>Elegí tu estilo</p>
+</div>
 
-<h2 class="titulo-seccion">Categorías</h2>
-
-<div class="grid-categorias">
+<div class="categorias-grid">
 
 <div class="categoria-card">
-<img src="assets/img/categorias/remeras.jpg" alt="">
-<div class="overlay">
+<div class="categoria-bg"></div>
+<div class="categoria-overlay"></div>
 <h3>Remeras</h3>
-<a href="#">Ver Todo</a>
-</div>
+<span>Ver Todo</span>
 </div>
 
 <div class="categoria-card">
-<img src="assets/img/categorias/buzos.jpg" alt="">
-<div class="overlay">
+<div class="categoria-bg"></div>
+<div class="categoria-overlay"></div>
 <h3>Buzos</h3>
-<a href="#">Ver Todo</a>
-</div>
+<span>Ver Todo</span>
 </div>
 
 <div class="categoria-card">
-<img src="assets/img/categorias/camperas.jpg" alt="">
-<div class="overlay">
+<div class="categoria-bg"></div>
+<div class="categoria-overlay"></div>
 <h3>Camperas</h3>
-<a href="#">Ver Todo</a>
-</div>
+<span>Ver Todo</span>
 </div>
 
 <div class="categoria-card">
-<img src="assets/img/categorias/pantalones.jpg" alt="">
-<div class="overlay">
+<div class="categoria-bg"></div>
+<div class="categoria-overlay"></div>
 <h3>Pantalones</h3>
-<a href="#">Ver Todo</a>
-</div>
+<span>Ver Todo</span>
 </div>
 
 <div class="categoria-card">
-<img src="assets/img/categorias/gorras.jpg" alt="">
-<div class="overlay">
+<div class="categoria-bg"></div>
+<div class="categoria-overlay"></div>
 <h3>Gorras</h3>
-<a href="#">Ver Todo</a>
-</div>
+<span>Ver Todo</span>
 </div>
 
 <div class="categoria-card">
-<img src="assets/img/categorias/accesorios.jpg" alt="">
-<div class="overlay">
+<div class="categoria-bg"></div>
+<div class="categoria-overlay"></div>
 <h3>Accesorios</h3>
-<a href="#">Ver Todo</a>
-</div>
-</div>
-
+<span>Ver Todo</span>
 </div>
 
 </div>
@@ -231,233 +271,388 @@ Ver Importados
 </section>
 
 <!-- ========================= -->
-<!-- IMPORTADOS -->
+<!-- DROP + IMPORTADOS -->
 <!-- ========================= -->
 
-<section class="importados">
+<section class="destacados">
 
-<div class="contenedor">
+<div class="drop-card">
 
-<div class="titulo-flex">
+<div class="drop-header">
 
-<h2>Importados</h2>
+<h2>💎 DROP EXCLUSIVO</h2>
+
+<p>Unidades limitadas</p>
+
+</div>
+
+<div class="contador-drop">
+
+<div>
+<h3>02</h3>
+<span>Días</span>
+</div>
+
+<div>
+<h3>14</h3>
+<span>Horas</span>
+</div>
+
+<div>
+<h3>37</h3>
+<span>Min</span>
+</div>
+
+<div>
+<h3>58</h3>
+<span>Seg</span>
+</div>
+
+</div>
+
+<div class="drop-gallery">
+
+<div class="drop-img"></div>
+
+<div class="drop-img"></div>
+
+<div class="drop-img"></div>
+
+</div>
+
+<a href="#" class="btn-gold drop-btn">
+
+VER DROP
+
+</a>
+
+</div>
+
+<div class="importados">
+
+<div class="section-head">
+
+<h2>IMPORTADOS</h2>
 
 <a href="#">Ver Todo</a>
 
 </div>
 
-<div class="productos-grid">
+<p>
 
-<div class="producto">
-<img src="assets/img/productos/importado1.jpg" alt="">
+Lo mejor del mundo, en un solo lugar.
+
+</p>
+
+<div class="marcas">
+
+<div>Nike</div>
+
+<div>Jordan</div>
+
+<div>Adidas</div>
+
+<div>NB</div>
+
+<div>TNF</div>
+
+<div>Lacoste</div>
+
+</div>
+
+<div class="importados-grid">
+
+<div class="import-card">
+
+<div class="img-animation"></div>
+
 <h3>Nike Air Max</h3>
-<p>$189.999</p>
-<button class="agregar-carrito">Agregar</button>
+
+<span>$189.999</span>
+
+<button>Agregar</button>
+
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/importado2.jpg" alt="">
+<div class="import-card">
+
+<div class="img-animation"></div>
+
 <h3>Jordan Retro</h3>
-<p>$319.999</p>
-<button class="agregar-carrito">Agregar</button>
+
+<span>$319.999</span>
+
+<button>Agregar</button>
+
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/importado3.jpg" alt="">
+<div class="import-card">
+
+<div class="img-animation"></div>
+
 <h3>Adidas Campus</h3>
-<p>$159.999</p>
-<button class="agregar-carrito">Agregar</button>
+
+<span>$159.999</span>
+
+<button>Agregar</button>
+
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/importado4.jpg" alt="">
+<div class="import-card">
+
+<div class="img-animation"></div>
+
 <h3>New Balance</h3>
-<p>$149.999</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
+
+<span>$149.999</span>
+
+<button>Agregar</button>
 
 </div>
 
 </div>
 
-</section>
-
-<!-- ========================= -->
+</div><!-- ========================= -->
 <!-- NUEVOS INGRESOS -->
 <!-- ========================= -->
 
 <section class="productos">
 
-<div class="contenedor">
+<div class="section-head">
 
-<div class="titulo-flex">
+<h2>NUEVOS INGRESOS</h2>
 
-<h2>Nuevos Ingresos</h2>
-
-<a href="#">Ver Todo</a>
+<a href="#">VER TODO</a>
 
 </div>
 
-<div class="productos-grid">
-
-<div class="producto">
-<img src="assets/img/productos/remera1.jpg" alt="">
-<h3>Remera Mindset</h3>
-<p>$29.990</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
-
-<div class="producto">
-<img src="assets/img/productos/buzo1.jpg" alt="">
-<h3>Buzo Oversize</h3>
-<p>$54.990</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
-
-<div class="producto">
-<img src="assets/img/productos/buzo2.jpg" alt="">
-<h3>Buzo No Limits</h3>
-<p>$54.990</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
-
-<div class="producto">
-<img src="assets/img/productos/campera1.jpg" alt="">
-<h3>Campera Puffer</h3>
-<p>$89.990</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
-
-<div class="producto">
-<img src="assets/img/productos/pantalon1.jpg" alt="">
-<h3>Jogger Essential</h3>
-<p>$44.990</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
-
-<div class="producto">
-<img src="assets/img/productos/remera2.jpg" alt="">
-<h3>Remera Backprint</h3>
-<p>$29.990</p>
-<button class="agregar-carrito">Agregar</button>
-</div>
+<div class="productos-grid" id="nuevos-productos">
 
 </div>
 
-</div>
+</section>
 
-</section><!-- ========================= -->
+<!-- ========================= -->
 <!-- MÁS VENDIDOS -->
 <!-- ========================= -->
 
 <section class="productos">
 
-<div class="contenedor">
+<div class="section-head">
 
-<div class="titulo-flex">
+<h2>MÁS VENDIDOS</h2>
 
-<h2>Más Vendidos</h2>
-
-<a href="#">Ver Todo</a>
+<a href="#">VER TODO</a>
 
 </div>
 
-<div class="productos-grid">
+<div class="productos-grid" id="mas-vendidos">
 
-<div class="producto">
-<img src="assets/img/productos/mas1.jpg" alt="">
-<h3>Buzo Classic 99</h3>
-<p>$49.990</p>
-<button class="agregar-carrito">Agregar</button>
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/mas2.jpg" alt="">
-<h3>Remera Essential</h3>
-<p>$24.990</p>
-<button class="agregar-carrito">Agregar</button>
+</section>
+
+<!-- ========================= -->
+<!-- BENEFICIOS -->
+<!-- ========================= -->
+
+<section class="beneficios">
+
+<div class="beneficio">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+
+<h3>ENVÍOS A TODO EL PAÍS</h3>
+
+<p>Rápidos y seguros</p>
+
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/mas3.jpg" alt="">
-<h3>Campera Rompeviento</h3>
-<p>$59.990</p>
-<button class="agregar-carrito">Agregar</button>
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/mas4.jpg" alt="">
-<h3>Jogger Cargo</h3>
-<p>$49.990</p>
-<button class="agregar-carrito">Agregar</button>
+<div class="beneficio">
+
+<i class="fa-regular fa-credit-card"></i>
+
+<div>
+
+<h3>3 CUOTAS SIN INTERÉS</h3>
+
+<p>Tarjetas seleccionadas</p>
+
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/mas5.jpg" alt="">
-<h3>Gorra 99 Original</h3>
-<p>$19.990</p>
-<button class="agregar-carrito">Agregar</button>
 </div>
 
-<div class="producto">
-<img src="assets/img/productos/mas6.jpg" alt="">
-<h3>Hoodie Statement</h3>
-<p>$54.990</p>
-<button class="agregar-carrito">Agregar</button>
+<div class="beneficio">
+
+<i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+<div>
+
+<h3>CAMBIOS FÁCILES</h3>
+
+<p>Hasta 30 días</p>
+
 </div>
+
+</div>
+
+<div class="beneficio">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+<div>
+
+<h3>ATENCIÓN PERSONALIZADA</h3>
+
+<p>WhatsApp</p>
 
 </div>
 
 </div>
 
 </section>
-
 <!-- ========================= -->
 <!-- INSTAGRAM -->
 <!-- ========================= -->
 
 <section class="instagram">
 
-<div class="contenedor">
+<div class="section-title">
 
-<h2>Seguinos en Instagram</h2>
+<h2>SEGUINOS EN INSTAGRAM</h2>
+
+<p>@las99frases</p>
+
+</div>
 
 <div class="instagram-grid">
 
-<img src="assets/img/instagram/1.jpg" alt="">
-<img src="assets/img/instagram/2.jpg" alt="">
-<img src="assets/img/instagram/3.jpg" alt="">
-<img src="assets/img/instagram/4.jpg" alt="">
-<img src="assets/img/instagram/5.jpg" alt="">
-<img src="assets/img/instagram/6.jpg" alt="">
-<img src="assets/img/instagram/7.jpg" alt="">
-<img src="assets/img/instagram/8.jpg" alt="">
+<div class="insta-card"><div class="img-animation"></div></div>
 
-</div>
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
+
+<div class="insta-card"><div class="img-animation"></div></div>
 
 </div>
 
 </section>
 
 <!-- ========================= -->
+<!-- NEWSLETTER -->
+<!-- ========================= -->
+
+<section class="newsletter">
+
+<div class="newsletter-box">
+
+<h2>10% OFF EN TU PRIMERA COMPRA</h2>
+
+<p>
+
+Suscribite para recibir novedades, lanzamientos y promociones exclusivas.
+
+</p>
+
+<form>
+
+<input
+type="email"
+placeholder="Ingresá tu correo electrónico">
+
+<button type="submit">
+
+SUSCRIBIRME
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- MARCAS -->
+<!-- ========================= -->
+
+<section class="brands">
+
+<div class="brand">NIKE</div>
+
+<div class="brand">JORDAN</div>
+
+<div class="brand">ADIDAS</div>
+
+<div class="brand">NEW BALANCE</div>
+
+<div class="brand">THE NORTH FACE</div>
+
+<div class="brand">LACOSTE</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- SEPARADOR -->
+<!-- ========================= -->
+
+<section class="separator">
+
+<div class="separator-line"></div>
+
+</section>
+<!-- ========================= -->
 <!-- FOOTER -->
 <!-- ========================= -->
 
 <footer class="footer">
 
-<div class="contenedor footer-grid">
+<div class="footer-container">
 
-<div>
+<div class="footer-col">
 
-<h3>LAS 99 FRASES</h3>
+<h2>LAS <span>99</span> FRASES</h2>
 
-<p>Más que una marca, una forma de pensar.</p>
+<p>
+
+Streetwear Premium.
+
+Diseñado para quienes buscan diferenciarse.
+
+</p>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+
+<a href="#"><i class="fab fa-tiktok"></i></a>
+
+<a href="#"><i class="fab fa-whatsapp"></i></a>
 
 </div>
 
-<div>
+</div>
 
-<h4>Información</h4>
+<div class="footer-col">
+
+<h3>INFORMACIÓN</h3>
 
 <ul>
 
@@ -475,9 +670,9 @@ Ver Importados
 
 </div>
 
-<div>
+<div class="footer-col">
 
-<h4>Mi Cuenta</h4>
+<h3>MI CUENTA</h3>
 
 <ul>
 
@@ -487,33 +682,202 @@ Ver Importados
 
 <li><a href="#">Favoritos</a></li>
 
+<li><a href="#">Carrito</a></li>
+
 </ul>
 
 </div>
 
-<div>
+<div class="footer-col">
 
-<h4>Contacto</h4>
+<h3>MEDIOS DE PAGO</h3>
 
-<p>WhatsApp</p>
+<div class="payments">
 
-<p>Instagram</p>
+<div class="pay-card">VISA</div>
 
-<p>Facebook</p>
+<div class="pay-card">MASTER</div>
+
+<div class="pay-card">AMEX</div>
+
+<div class="pay-card">MP</div>
+
+<div class="pay-card">TRANSFERENCIA</div>
 
 </div>
+
+</div>
+
+</div>
+
+<div class="footer-copy">
+
+© 2026 LAS 99 FRASES · Todos los derechos reservados.
 
 </div>
 
 </footer>
 
+<!-- ========================= -->
 <!-- BOTÓN WHATSAPP -->
+<!-- ========================= -->
 
-<a href="https://wa.me/5490000000000" class="whatsapp" target="_blank">
+<a href="#" class="btn-whatsapp">
 
-<i class="fa-brands fa-whatsapp"></i>
+<i class="fab fa-whatsapp"></i>
 
 </a>
+
+<!-- ========================= -->
+<!-- BOTÓN SUBIR -->
+<!-- ========================= -->
+
+<button id="btnTop">
+
+<i class="fas fa-chevron-up"></i>
+
+</button>
+
+<!-- ========================= -->
+<!-- PANEL CARRITO -->
+<!-- ========================= -->
+
+<div class="cart-panel">
+
+<div class="cart-header">
+
+<h2>Mi Carrito</h2>
+
+<button class="close-cart">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+</div>
+
+<div class="cart-body">
+
+<p class="cart-empty">
+
+Tu carrito está vacío.
+
+</p>
+
+</div>
+
+<div class="cart-footer">
+
+<h3>
+
+Total:
+
+<span>$0</span>
+
+</h3>
+
+<button class="checkout">
+
+FINALIZAR COMPRA
+
+</button>
+
+</div>
+
+</div>
+
+<div class="cart-overlay"></div>
+<!-- ========================= -->
+<!-- LOADER -->
+<!-- ========================= -->
+
+<div id="loader">
+
+<div class="loader-logo">
+
+<h1>
+
+LAS <span>99</span> FRASES
+
+</h1>
+
+<div class="loader-bar">
+
+<div class="loader-progress"></div>
+
+</div>
+
+<p>Cargando colección 2026...</p>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- BUSCADOR -->
+<!-- ========================= -->
+
+<div class="search-modal">
+
+<div class="search-box">
+
+<button class="close-search">
+
+<i class="fas fa-times"></i>
+
+</button>
+
+<h2>
+
+Buscar Productos
+
+</h2>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Escribe aquí...">
+
+<div id="searchResults">
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- NOTIFICACIONES -->
+<!-- ========================= -->
+
+<div id="toast">
+
+Producto agregado correctamente.
+
+</div>
+
+<!-- ========================= -->
+<!-- FONDO ANIMADO -->
+<!-- ========================= -->
+
+<div class="bg-particles">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<!-- ========================= -->
+<!-- SCRIPTS -->
+<!-- ========================= -->
 
 <script src="script.js"></script>
 
