@@ -1,580 +1,677 @@
-/*==================================================
+/*=========================================
 LAS 99 FRASES
 SCRIPT.JS
-VERSIÓN 2.0
-==================================================*/
+PARTE 1
+=========================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+"use strict";
 
-    iniciarHeader();
-    iniciarMenu();
-    iniciarCarrito();
-    iniciarFavoritos();
-    iniciarBuscador();
-    iniciarSlider();
-    iniciarScroll();
-    iniciarAnimaciones();
+/*==============================
+ELEMENTOS
+==============================*/
 
-});
+const carritoBtn = document.querySelector(".cart-btn");
+const carrito = document.querySelector(".cart-panel");
+const cerrarCarrito = document.querySelector(".close-cart");
+const overlay = document.querySelector(".cart-overlay");
 
-/*==========================
-HEADER
-==========================*/
+const loader = document.getElementById("loader");
 
-function iniciarHeader(){
+const btnTop = document.getElementById("btnTop");
 
-    const header=document.querySelector(".header");
+const contador = document.getElementById("contador");
 
-    window.addEventListener("scroll",()=>{
+const toast = document.getElementById("toast");
 
-        if(window.scrollY>80){
+const menuBtn = document.querySelector(".menu");
 
-            header.classList.add("header-scroll");
+const menu = document.querySelector("nav");
 
-        }else{
+/*==============================
+LOCAL STORAGE
+==============================*/
 
-            header.classList.remove("header-scroll");
+let carritoProductos =
+JSON.parse(localStorage.getItem("carrito")) || [];
 
-        }
+let favoritos =
+JSON.parse(localStorage.getItem("favoritos")) || [];
 
-    });
+/*==============================
+GUARDAR
+==============================*/
 
-}
+function guardarDatos(){
 
-/*==========================
-MENU
-==========================*/
-
-function iniciarMenu(){
-
-    const boton=document.querySelector(".menu-icon");
-
-    const menu=document.querySelector(".menu");
-
-    if(!boton||!menu)return;
-
-    boton.addEventListener("click",()=>{
-
-        menu.classList.toggle("menu-activo");
-
-    });
-
-}
-
-/*==========================
-CARRITO
-==========================*/
-
-let carrito=JSON.parse(localStorage.getItem("carrito"))||[];
-
-function iniciarCarrito(){
-
-    actualizarCarrito();
-
-    document.querySelectorAll(".agregar-carrito").forEach(btn=>{
-
-        btn.addEventListener("click",()=>{
-
-            const card=btn.closest(".producto");
-
-            const nombre=card.querySelector("h3").innerText;
-
-            const precio=card.querySelector("p").innerText;
-
-            carrito.push({
-
-                nombre,
-
-                precio
-
-            });
-
-            guardarCarrito();
-
-            actualizarCarrito();
-
-            toast("Producto agregado");
-
-        });
-
-    });
-
-}
-
-function guardarCarrito(){
-
-    localStorage.setItem(
-
-        "carrito",
-
-        JSON.stringify(carrito)
-
-    );
-
-}
-
-function actualizarCarrito(){
-
-    const contador=document.getElementById("contador-carrito");
-
-    if(contador){
-
-        contador.innerText=carrito.length;
-
-    }
-
-}
-
-/*==========================
-FAVORITOS
-==========================*/
-
-let favoritos=JSON.parse(localStorage.getItem("favoritos"))||[];
-
-function iniciarFavoritos(){
-
-    const corazon=document.querySelector(".fa-heart");
-
-    if(!corazon)return;
-
-    corazon.addEventListener("click",()=>{
-
-        toast("Favoritos");
-
-    });
-
-}
-
-/*==========================
-BUSCADOR
-==========================*/
-
-function iniciarBuscador(){
-
-    const lupa=document.querySelector(".fa-magnifying-glass");
-
-    if(!lupa)return;
-
-    lupa.addEventListener("click",()=>{
-
-        let texto=prompt("Buscar producto");
-
-        if(texto){
-
-            toast("Buscando: "+texto);
-
-        }
-
-    });
-
-}
-
-/*==========================
-SLIDER
-==========================*/
-
-function iniciarSlider(){
-
-    const puntos=document.querySelectorAll(".hero-slider span");
-
-    if(!puntos.length)return;
-
-    let actual=0;
-
-    setInterval(()=>{
-
-        puntos[actual].classList.remove("active");
-
-        actual++;
-
-        if(actual>=puntos.length){
-
-            actual=0;
-
-        }
-
-        puntos[actual].classList.add("active");
-
-    },3500);
-
-}
-
-/*==========================
-SCROLL
-==========================*/
-
-function iniciarScroll(){
-
-    const boton=document.createElement("button");
-
-    boton.innerHTML="↑";
-
-    boton.id="subir";
-
-    document.body.appendChild(boton);
-
-    boton.onclick=()=>{
-
-        window.scrollTo({
-
-            top:0,
-
-            behavior:"smooth"
-
-        });
-
-    };
-
-    window.addEventListener("scroll",()=>{
-
-        if(window.scrollY>400){
-
-            boton.style.opacity="1";
-
-        }else{
-
-            boton.style.opacity="0";
-
-        }
-
-    });
-
-}
-
-/*==========================
-ANIMACIONES
-==========================*/
-
-function iniciarAnimaciones(){
-
-    const elementos=document.querySelectorAll(
-
-        ".producto,.categoria-card"
-
-    );
-
-    const observer=new IntersectionObserver((items)=>{
-
-        items.forEach(item=>{
-
-            if(item.isIntersecting){
-
-                item.target.classList.add("mostrar");
-
-            }
-
-        });
-
-    });
-
-    elementos.forEach(el=>{
-
-        observer.observe(el);
-
-    });
-
-}
-
-/*==========================
-TOAST
-==========================*/
-
-function toast(texto){
-
-    const aviso=document.createElement("div");
-
-    aviso.className="toast";
-
-    aviso.innerHTML=texto;
-
-    document.body.appendChild(aviso);
-
-    setTimeout(()=>{
-
-        aviso.classList.add("toast-show");
-
-    },100);
-
-    setTimeout(()=>{
-
-        aviso.remove();
-
-    },2500);
-
-}/*==================================================
-PARTE 2
-CARRITO LATERAL + FAVORITOS + FILTRO + UTILIDADES
-==================================================*/
-
-/*==========================
-CARRITO LATERAL
-==========================*/
-
-const panelCarrito = document.createElement("div");
-panelCarrito.className = "panel-carrito";
-
-panelCarrito.innerHTML = `
-<div class="panel-header">
-<h2>Mi Carrito</h2>
-<button id="cerrarCarrito">✕</button>
-</div>
-
-<div id="listaCarrito"></div>
-
-<div class="panel-footer">
-
-<h3>Total: <span id="totalCarrito">$0</span></h3>
-
-<button id="vaciarCarrito">
-Vaciar carrito
-</button>
-
-<button id="comprarAhora">
-Finalizar compra
-</button>
-
-</div>
-`;
-
-document.body.appendChild(panelCarrito);
-
-const botonCarrito = document.querySelector(".carrito");
-
-if (botonCarrito) {
-
-    botonCarrito.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        panelCarrito.classList.add("abierto");
-
-        renderCarrito();
-
-    });
-
-}
-
-document
-.getElementById("cerrarCarrito")
-.addEventListener("click",()=>{
-
-panelCarrito.classList.remove("abierto");
-
-});
-
-/*==========================
-RENDER CARRITO
-==========================*/
-
-function renderCarrito(){
-
-const lista=document.getElementById("listaCarrito");
-
-const total=document.getElementById("totalCarrito");
-
-lista.innerHTML="";
-
-let suma=0;
-
-if(carrito.length===0){
-
-lista.innerHTML="<p>Tu carrito está vacío.</p>";
-
-total.innerHTML="$0";
-
-return;
-
-}
-
-carrito.forEach((producto,index)=>{
-
-let precio=parseFloat(
-
-producto.precio
-.replace("$","")
-.replace(/\./g,"")
-.replace(",",".")
+localStorage.setItem(
+"carrito",
+JSON.stringify(carritoProductos)
 );
 
-if(isNaN(precio)) precio=0;
-
-suma+=precio;
-
-const item=document.createElement("div");
-
-item.className="item-carrito";
-
-item.innerHTML=`
-
-<div>
-
-<h4>${producto.nombre}</h4>
-
-<p>${producto.precio}</p>
-
-</div>
-
-<button onclick="eliminarProducto(${index})">
-
-🗑
-
-</button>
-
-`;
-
-lista.appendChild(item);
-
-});
-
-total.innerHTML="$"+suma.toLocaleString();
+localStorage.setItem(
+"favoritos",
+JSON.stringify(favoritos)
+);
 
 }
 
-/*==========================
-ELIMINAR
-==========================*/
+/*==============================
+CONTADOR
+==============================*/
 
-window.eliminarProducto=function(indice){
+function actualizarContador(){
 
-carrito.splice(indice,1);
-
-guardarCarrito();
-
-actualizarCarrito();
-
-renderCarrito();
-
-toast("Producto eliminado");
+contador.textContent =
+carritoProductos.length;
 
 }
 
-/*==========================
-VACIAR
-==========================*/
+actualizarContador();
 
-document
-.getElementById("vaciarCarrito")
-.addEventListener("click",()=>{
-
-carrito=[];
-
-guardarCarrito();
-
-actualizarCarrito();
-
-renderCarrito();
-
-toast("Carrito vacío");
-
-});
-
-/*==========================
-COMPRAR
-==========================*/
-
-document
-.getElementById("comprarAhora")
-.addEventListener("click",()=>{
-
-if(carrito.length===0){
-
-toast("No hay productos");
-
-return;
-
-}
-
-alert("Checkout próximamente.");
-
-});
-
-/*==========================
-FAVORITOS
-==========================*/
-
-document.querySelectorAll(".producto").forEach(card=>{
-
-const boton=document.createElement("button");
-
-boton.className="favorito";
-
-boton.innerHTML="♡";
-
-card.appendChild(boton);
-
-boton.addEventListener("click",()=>{
-
-boton.classList.toggle("activo");
-
-boton.innerHTML=
-boton.classList.contains("activo")
-?"♥":"♡";
-
-});
-
-});
-
-/*==========================
-BUSCADOR
-==========================*/
-
-function buscarProducto(texto){
-
-const cards=document.querySelectorAll(".producto");
-
-texto=texto.toLowerCase();
-
-cards.forEach(card=>{
-
-const nombre=card
-.querySelector("h3")
-.innerText
-.toLowerCase();
-
-if(nombre.includes(texto)){
-
-card.style.display="block";
-
-}else{
-
-card.style.display="none";
-
-}
-
-});
-
-}
-
-/*==========================
-LUPA
-==========================*/
-
-const botonBuscar=document.querySelector(".search-btn");
-
-if(botonBuscar){
-
-botonBuscar.addEventListener("click",()=>{
-
-const texto=prompt("Buscar producto");
-
-if(texto){
-
-buscarProducto(texto);
-
-}
-
-});
-
-}
-
-/*==========================
-UTILIDADES
-==========================*/
+/*==============================
+LOADER
+==============================*/
 
 window.addEventListener("load",()=>{
 
-actualizarCarrito();
+setTimeout(()=>{
 
-renderCarrito();
+loader.style.opacity="0";
+
+loader.style.visibility="hidden";
+
+},1800);
+
+});
+
+/*==============================
+ABRIR CARRITO
+==============================*/
+
+carritoBtn.addEventListener("click",()=>{
+
+carrito.classList.add("active");
+
+overlay.classList.add("active");
+
+});
+
+/*==============================
+CERRAR CARRITO
+==============================*/
+
+cerrarCarrito.addEventListener("click",cerrarPanel);
+
+overlay.addEventListener("click",cerrarPanel);
+
+function cerrarPanel(){
+
+carrito.classList.remove("active");
+
+overlay.classList.remove("active");
+
+}
+
+/*==============================
+BOTÓN SUBIR
+==============================*/
+
+btnTop.style.display="none";
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+btnTop.style.display="flex";
+
+}else{
+
+btnTop.style.display="none";
+
+}
+
+});
+
+btnTop.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+/*==============================
+MENÚ RESPONSIVE
+==============================*/
+
+menuBtn.addEventListener("click",()=>{
+
+menu.classList.toggle("active");
+
+});
+
+/*==============================
+TOAST
+==============================*/
+
+function mostrarToast(texto){
+
+toast.textContent = texto;
+
+toast.classList.add("show");
+
+setTimeout(()=>{
+
+toast.classList.remove("show");
+
+},2500);
+
+}
+/*=========================================
+LAS 99 FRASES
+SCRIPT.JS
+PARTE 2
+PRODUCTOS + CARRITO + FAVORITOS
+=========================================*/
+
+/*==============================
+PRODUCTOS
+==============================*/
+
+const productos = [
+
+{
+id:1,
+nombre:"Remera Oversize",
+precio:34999,
+categoria:"Remeras"
+},
+
+{
+id:2,
+nombre:"Buzo Premium",
+precio:59999,
+categoria:"Buzos"
+},
+
+{
+id:3,
+nombre:"Campera Street",
+precio:89999,
+categoria:"Camperas"
+},
+
+{
+id:4,
+nombre:"Pantalón Cargo",
+precio:64999,
+categoria:"Pantalones"
+},
+
+{
+id:5,
+nombre:"Gorra Premium",
+precio:25999,
+categoria:"Accesorios"
+},
+
+{
+id:6,
+nombre:"Nike Air Max",
+precio:189999,
+categoria:"Importados"
+},
+
+{
+id:7,
+nombre:"Jordan Retro",
+precio:319999,
+categoria:"Importados"
+},
+
+{
+id:8,
+nombre:"Adidas Campus",
+precio:159999,
+categoria:"Importados"
+}
+
+];
+
+/*==============================
+AGREGAR AL CARRITO
+==============================*/
+
+function agregarAlCarrito(id){
+
+const producto = productos.find(p=>p.id===id);
+
+if(!producto) return;
+
+carritoProductos.push(producto);
+
+guardarDatos();
+
+actualizarContador();
+
+mostrarToast("Producto agregado al carrito");
+
+}
+
+/*==============================
+QUITAR PRODUCTO
+==============================*/
+
+function quitarProducto(id){
+
+carritoProductos = carritoProductos.filter(item=>item.id!==id);
+
+guardarDatos();
+
+actualizarContador();
+
+mostrarToast("Producto eliminado");
+
+}
+
+/*==============================
+FAVORITOS
+==============================*/
+
+function agregarFavorito(id){
+
+if(favoritos.includes(id)){
+
+favoritos = favoritos.filter(f=>f!==id);
+
+mostrarToast("Quitado de favoritos");
+
+}else{
+
+favoritos.push(id);
+
+mostrarToast("Agregado a favoritos");
+
+}
+
+guardarDatos();
+
+}
+
+/*==============================
+TOTAL DEL CARRITO
+==============================*/
+
+function calcularTotal(){
+
+let total = 0;
+
+carritoProductos.forEach(producto=>{
+
+total += producto.precio;
+
+});
+
+return total;
+
+}
+
+/*==============================
+ACTUALIZAR TOTAL
+==============================*/
+
+function actualizarTotal(){
+
+const totalSpan = document.querySelector(".cart-footer span");
+
+if(totalSpan){
+
+totalSpan.textContent =
+"$" + calcularTotal().toLocaleString("es-AR");
+
+}
+
+}
+
+actualizarTotal();
+/*=========================================
+LAS 99 FRASES
+SCRIPT.JS
+PARTE 3
+RENDER + BUSCADOR + SCROLL
+=========================================*/
+
+/*==============================
+RENDER PRODUCTOS
+==============================*/
+
+function crearTarjeta(producto){
+
+return `
+
+<div class="product-card reveal">
+
+<div class="img-animation"></div>
+
+<div class="etiqueta">NUEVO</div>
+
+<div class="favorito"
+onclick="agregarFavorito(${producto.id})">
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
+<div class="product-info">
+
+<h3>${producto.nombre}</h3>
+
+<p>${producto.categoria}</p>
+
+<div class="precio">
+
+$${producto.precio.toLocaleString("es-AR")}
+
+</div>
+
+<div class="talles">
+
+<span>S</span>
+
+<span>M</span>
+
+<span>L</span>
+
+<span>XL</span>
+
+</div>
+
+</div>
+
+<div class="product-footer">
+
+<button
+class="btn-add"
+onclick="agregarAlCarrito(${producto.id})">
+
+Agregar
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+/*==============================
+MOSTRAR PRODUCTOS
+==============================*/
+
+const nuevos =
+document.getElementById("nuevos-productos");
+
+const vendidos =
+document.getElementById("mas-vendidos");
+
+if(nuevos){
+
+nuevos.innerHTML =
+productos
+.map(crearTarjeta)
+.join("");
+
+}
+
+if(vendidos){
+
+vendidos.innerHTML =
+productos
+.slice()
+.reverse()
+.map(crearTarjeta)
+.join("");
+
+}
+
+/*==============================
+BUSCADOR
+==============================*/
+
+const inputBuscar =
+document.getElementById("searchInput");
+
+const resultados =
+document.getElementById("searchResults");
+
+if(inputBuscar){
+
+inputBuscar.addEventListener("input",()=>{
+
+const texto =
+inputBuscar.value.toLowerCase();
+
+const encontrados =
+productos.filter(p=>
+
+p.nombre.toLowerCase().includes(texto)
+
+);
+
+resultados.innerHTML =
+encontrados
+.map(crearTarjeta)
+.join("");
+
+});
+
+}
+
+/*==============================
+ANIMACIÓN SCROLL
+==============================*/
+
+function revelar(){
+
+const elementos =
+document.querySelectorAll(".reveal");
+
+const pantalla =
+window.innerHeight;
+
+elementos.forEach(el=>{
+
+const posicion =
+el.getBoundingClientRect().top;
+
+if(posicion < pantalla-100){
+
+el.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",revelar);
+
+revelar();
+/*=========================================
+LAS 99 FRASES
+SCRIPT.JS
+PARTE 4
+=========================================*/
+
+/*==============================
+CARRUSEL HERO
+==============================*/
+
+const hero = document.querySelector(".hero");
+
+const fondos = [
+
+"linear-gradient(135deg,#111,#1d1d1d,#000)",
+
+"linear-gradient(135deg,#2b1b00,#111,#000)",
+
+"linear-gradient(135deg,#000,#222,#111)"
+
+];
+
+let slide = 0;
+
+setInterval(()=>{
+
+slide++;
+
+if(slide>=fondos.length){
+
+slide=0;
+
+}
+
+hero.style.background=fondos[slide];
+
+const dots=document.querySelectorAll(".hero-dots span");
+
+dots.forEach(dot=>dot.classList.remove("active"));
+
+if(dots[slide]){
+
+dots[slide].classList.add("active");
+
+}
+
+},5000);
+
+/*==============================
+CONTADOR DROP
+==============================*/
+
+function iniciarContador(){
+
+const numeros=document.querySelectorAll(".contador-drop h3");
+
+if(numeros.length!==4) return;
+
+let dias=2;
+let horas=14;
+let minutos=37;
+let segundos=58;
+
+setInterval(()=>{
+
+segundos--;
+
+if(segundos<0){
+
+segundos=59;
+minutos--;
+
+}
+
+if(minutos<0){
+
+minutos=59;
+horas--;
+
+}
+
+if(horas<0){
+
+horas=23;
+dias--;
+
+}
+
+if(dias<0){
+
+dias=0;
+
+}
+
+numeros[0].textContent=String(dias).padStart(2,"0");
+numeros[1].textContent=String(horas).padStart(2,"0");
+numeros[2].textContent=String(minutos).padStart(2,"0");
+numeros[3].textContent=String(segundos).padStart(2,"0");
+
+},1000);
+
+}
+
+iniciarContador();
+
+/*==============================
+NEWSLETTER
+==============================*/
+
+const newsletter=document.querySelector(".newsletter form");
+
+if(newsletter){
+
+newsletter.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+mostrarToast("¡Gracias por suscribirte!");
+
+newsletter.reset();
+
+});
+
+}
+
+/*==============================
+AÑO AUTOMÁTICO
+==============================*/
+
+const copy=document.querySelector(".footer-copy");
+
+if(copy){
+
+copy.innerHTML=`© ${new Date().getFullYear()} LAS 99 FRASES · Todos los derechos reservados.`;
+
+}
+
+/*==============================
+EFECTO BOTONES
+==============================*/
+
+document.querySelectorAll("button").forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.transform="translateY(-3px)";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.transform="translateY(0)";
+
+});
+
+});
+
+/*==============================
+INICIALIZACIÓN
+==============================*/
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+actualizarContador();
+
+actualizarTotal();
+
+revelar();
+
+console.log("LAS 99 FRASES cargada correctamente.");
 
 });
